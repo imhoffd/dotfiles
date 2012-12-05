@@ -15,7 +15,10 @@ end
 def main
   dotfiles = File.join(Dir.home, 'dotfiles')
   entries = Dir.entries(dotfiles).select { |f| f[0] != '.' }
-  existing = entries.select { |f| File.exists?(File.join(Dir.home, '.' + f)) }
+  existing = entries.select do |f|
+    p = File.join(Dir.home, '.' + f)
+    File.exists?(p) and !File.symlink?(p)
+  end
   response = 'y'
   if !existing.empty?
     puts 'WARNING: This will overwrite the following dotfiles:'
@@ -29,22 +32,25 @@ def main
     entries.each do |f|
       if f != 'bin' and f[0] != '.' and f != 'README.md'
         p = File.join(Dir.home, '.' + f)
-        if File.exists?(p)
-          if File.directory?(p) and !File.symlink?(p)
-            Dir.rmdir_r(p)
+        if !File.symlink?(p)
+          if File.exists?(p)
+            if File.directory?(p)
+              Dir.rmdir_r(p)
+            else
+              File.delete(p)
+            end
+            puts (File.directory?(f) ? 'd ' : 'f ') + f + ' (overwrote)'
           else
-            File.delete(p)
+            puts (File.directory?(f) ? 'd ' : 'f ') + f + ' (wrote)'
           end
-          puts (File.directory?(f) ? 'd ' : 'f ') + f + ' (overwrote)'
-        else
-          puts (File.directory?(f) ? 'd ' : 'f ') + f + ' (wrote)'
+          File.symlink(File.join(dotfiles, f), p)
         end
-        File.symlink(File.join(dotfiles, f), p)
       end
     end
   else
     puts 'Aborting...'
   end
+  puts 'Done!'
 end
 
 if __FILE__ == $0
