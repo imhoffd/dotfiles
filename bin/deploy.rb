@@ -14,11 +14,10 @@ def rmdir_r(dir)
 end
 
 def main
-  home = File.expand_path('~')
-  dotfiles = File.join(home, 'dotfiles')
+  dotfiles = File.join(Dir.home, 'dotfiles')
   entries = Dir.entries(dotfiles).select { |f| f[0] != '.' }
   existing = entries.select do |f|
-    p = File.join(home, '.' + f)
+    p = File.join(Dir.home, '.' + f)
     File.exists?(p) and !File.symlink?(p)
   end
   response = 'y'
@@ -30,10 +29,10 @@ def main
     print 'Are you sure you want to overwrite these files? (y/n) '
     response = gets
   end
-  if !entries.empty? and response.slice(0, 1).downcase == 'y'
+  if !entries.empty? and response[0].downcase == 'y'
     entries.each do |f|
       if f != 'bin' and f[0] != '.' and f != 'README.md'
-        p = File.join(home, '.' + f)
+        p = File.join(Dir.home, '.' + f)
         if !File.symlink?(p)
           if File.exists?(p)
             if File.directory?(p)
@@ -41,9 +40,9 @@ def main
             else
               File.delete(p)
             end
-            puts File.directory?(f) ? 'd ' : 'f ' + f + ' (overwrote)'
+            puts (File.directory?(f) ? 'd ' : 'f ') + f + ' (overwrote)'
           else
-            puts File.directory?(f) ? 'd ' : 'f ' + f + ' (wrote)'
+            puts (File.directory?(f) ? 'd ' : 'f ') + f + ' (wrote)'
           end
           File.symlink(File.join(dotfiles, f), p)
         end
