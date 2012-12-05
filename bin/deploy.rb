@@ -1,15 +1,16 @@
-class Dir
-  def rmdir_r(dir)
-    Dir.chdir(dir)
-    Dir['**/*'].reverse_each do |f|
-      if File.directory?(f)
-        Dir.delete(f)
-      else
-        File.delete(f)
-      end
+def rmdir_r(dir)
+  Dir.chdir(dir)
+  Dir['**/{*,.*}'].select do |f|
+    n = f.split('/').last
+    n != '..' and n != '.'
+  end.reverse_each do |f|
+    if File.directory?(f)
+      Dir.delete(f)
+    else
+      File.delete(f)
     end
-    Dir.delete(dir)
   end
+  Dir.delete(dir)
 end
 
 def main
@@ -35,7 +36,7 @@ def main
         if !File.symlink?(p)
           if File.exists?(p)
             if File.directory?(p)
-              Dir.rmdir_r(p)
+              rmdir_r(p)
             else
               File.delete(p)
             end
