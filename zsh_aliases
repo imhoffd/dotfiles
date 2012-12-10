@@ -1,2 +1,7 @@
+# connections
+alias io="ssh imhoffd@io.uwplatt.edu"
+alias luna="ssh dwieeb@lunarinfluence.com"
+
+# shortcuts
 alias ll="ls -alh"
 alias l="ll"
