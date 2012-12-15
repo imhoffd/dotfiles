@@ -3,6 +3,7 @@ alias io="ssh imhoffd@io.uwplatt.edu"
 alias luna="ssh dwieeb@lunarinfluence.com"
 
 # shortcuts
+alias ps="ps aux | grep \"^$(id -nu)\""
 alias ll="ls -alh"
 alias l="ll"
 alias df="df -h"
