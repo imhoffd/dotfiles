@@ -34,6 +34,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+export EDITOR="vim"
+export VISUAL="vim"
+
 # Customize to your needs...
 
 source ~/.zsh_aliases
