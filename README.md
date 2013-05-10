@@ -8,3 +8,7 @@ Then, simply clone the repository and run the deploy script.
 
     git clone --recursive git://github.com/dwieeb/dotfiles.git
     ruby dotfiles/bin/deploy.rb
+
+To check for updates, pull recursively.
+
+    git pull --recurse-submodules
