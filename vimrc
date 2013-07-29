@@ -31,9 +31,6 @@ set autoread
 " Always show current position
 set ruler
 
-" Turn on line numbering
-set number
-
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
