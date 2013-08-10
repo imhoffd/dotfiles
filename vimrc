@@ -87,7 +87,7 @@ set softtabstop=2
 set shiftwidth=2
 set autoindent
 set nowrap
-set textwidth=80
+set textwidth=0
 
 " -------------------------------------
 "  Keyboard shortcuts
