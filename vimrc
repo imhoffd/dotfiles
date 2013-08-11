@@ -5,7 +5,7 @@
 "  Inspired_by:
 "      * https://github.com/feltnerm/dotfiles/blob/master/vimrc
 "      * http://amix.dk/vim/vimrc.html
-"      * http://vimcasts.org/episodes/creating-colorschemes-for-vim/
+"      * https://github.com/tomasr/dotfiles/blob/master/.vimrc
 "
 " -------------------------------------
 
@@ -19,7 +19,7 @@ set nocompatible
 
 " Infect!
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+execute pathogen#infect()
 
 " Enable filetype plugins
 filetype plugin on
@@ -60,14 +60,16 @@ set t_vb=
 set tm=500
 
 " -------------------------------------
-"  Color and font settings
+"  Appearance settings
 " -------------------------------------
 
 syntax enable
 set background=dark
-let g:molokai_original = 1
 set t_Co=256
+let g:molokai_original = 1
 colorscheme molokai
+
+let g:airline_theme = 'molokai'
 
 " -------------------------------------
 "  File & backup settings
