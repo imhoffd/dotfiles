@@ -65,7 +65,9 @@ set tm=500
 
 syntax enable
 set background=dark
-colorscheme solarized
+let g:molokai_original = 1
+set t_Co=256
+colorscheme molokai
 
 " -------------------------------------
 "  File & backup settings
