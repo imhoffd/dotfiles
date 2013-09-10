@@ -20,4 +20,5 @@ If you don't have ruby, symlink desired files & directories to your home directo
 Pull recursively, and then update submodules.
 
     git pull --recurse-submodules
+    git submodule init
     git submodule update
