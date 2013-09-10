@@ -39,10 +39,25 @@ set tm=500
 
 set background=dark
 set t_Co=256
+
+" ------------------------------------
+"  molokai settings
+" ------------------------------------
+
 let g:molokai_original = 1
 colorscheme molokai
 
+" ------------------------------------
+"  airline settings
+" ------------------------------------
+
 let g:airline_theme = 'badwolf'
+
+" ------------------------------------
+"  ctrlp settings
+" ------------------------------------
+
+let g:ctrlp_map = '<c-p>'
 
 " -------------------------------------
 "  File & backup settings
