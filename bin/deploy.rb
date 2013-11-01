@@ -30,22 +30,20 @@ def main
     response = gets
   end
   if !entries.empty? and response[0].downcase == 'y'
-    entries.each do |f|
-      if f != 'bin' and f[0] != '.' and f != 'README.md'
-        p = File.join(Dir.home, '.' + f)
-        if !File.symlink?(p)
-          if File.exists?(p)
-            if File.directory?(p)
-              rmdir_r(p)
-            else
-              File.delete(p)
-            end
-            puts (File.directory?(f) ? 'd ' : 'f ') + f + ' (overwrote)'
+    entries.reject!{ |f| f[0].includes?('.') || f.includes?('bin') || f.includes?('README.md') }.each do |f|
+      p = File.join(Dir.home, '.' + f)
+      if !File.symlink?(p)
+        if File.exists?(p)
+          if File.directory?(p)
+            rmdir_r(p)
           else
-            puts (File.directory?(f) ? 'd ' : 'f ') + f + ' (wrote)'
+            File.delete(p)
           end
-          File.symlink(File.join(dotfiles, f), p)
+          puts (File.directory?(f) ? 'd ' : 'f ') + f + ' (overwrote)'
+        else
+          puts (File.directory?(f) ? 'd ' : 'f ') + f + ' (wrote)'
         end
+        File.symlink(File.join(dotfiles, f), p)
       end
     end
   else
