@@ -30,7 +30,7 @@ def main
     response = gets
   end
   if !entries.empty? and response[0].downcase == 'y'
-    entries.reject!{ |f| f[0].includes?('.') || f.includes?('bin') || f.includes?('README.md') }.each do |f|
+    entries.reject!{ |f| ['bin', 'README.md'].include?(f) || f[0] == '.' }.each do |f|
       p = File.join(Dir.home, '.' + f)
       if !File.symlink?(p)
         if File.exists?(p)
