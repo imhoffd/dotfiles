@@ -16,7 +16,7 @@ def rmdir_r(dir)
 end
 
 def main
-  dotfiles = File.join(Dir.home, 'dotfiles')
+  dotfiles = File.join(Dir.home, '.dotfiles')
   entries = Dir.entries(dotfiles).select { |f| f[0] != '.' }
   
   existing = entries.select do |f|
