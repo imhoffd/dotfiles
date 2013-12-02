@@ -28,3 +28,6 @@
   autocrlf = input
 [alias]
   c = commit -m
+[log]
+  decorate = true
+  abbrevCommit = true
