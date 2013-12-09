@@ -41,4 +41,5 @@ umask 002
 
 # Customize to your needs...
 
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 source ~/.zsh_aliases
