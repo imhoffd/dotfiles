@@ -6,3 +6,4 @@ alias df="df -h"
 alias du="du -h"
 alias sub="sublime"
 alias tmux="TERM=screen-256color-bce tmux"
+vman() { man "$*" | vi -; }
