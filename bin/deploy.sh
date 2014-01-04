@@ -21,7 +21,7 @@ echo "Installing system dependencies..."
 apt-get install zsh vim
 
 # YouCompleteMe dependencies
-apt-get install build-essential cmake python-dev
+apt-get install vim-nox build-essential cmake python-dev
 
 echo "Updating dotfiles and dependencies..."
 
