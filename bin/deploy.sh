@@ -20,23 +20,11 @@ echo "Installing system dependencies..."
 # Essential dependencies
 apt-get install zsh vim
 
-# YouCompleteMe dependencies
-apt-get install vim-nox build-essential cmake python-dev
-
 echo "Updating dotfiles and dependencies..."
 
 # Update dotfiles submodules
 cd $DIR
 git submodule update --init --recursive
-
-if [ ! -d "ycm_build" ]; then
-    echo "Building YCM support libs..."
-    mkdir ycm_build
-    cd ycm_build
-    cmake -G "Unix Makefiles" . ../vim/bundle/YouCompleteMe/cpp
-    make ycm_support_libs
-    cd ../
-fi
 
 echo "Changing the shell of $USER_NAME to zsh."
 chsh -s /usr/bin/zsh $USER_NAME
