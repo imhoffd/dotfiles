@@ -1,4 +1,5 @@
 # shortcuts
+set -o vi
 #alias ps="ps aux | grep \"^$(id -nu)\""
 alias ll="ls -alh"
 alias l="ll"
