@@ -2,23 +2,11 @@
 
 DIR="$( dirname "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" )"
 
-if [ -z "$1" ]; then
-    USER_NAME=$SUDO_USER
-else
-    USER_NAME=$1
-fi
+USER_HOME=$(eval echo ~${USER})
 
-USER_HOME=$(eval echo ~${USER_NAME})
-
-if [ "$UID" -ne 0 ]; then
-    echo "Must be root to run this script."
-    exit
-fi
-
-echo "Installing system dependencies..."
-
-# Essential dependencies
-apt-get install zsh vim
+echo "Please ensure the following packages are installed."
+echo "zsh"
+echo "vim"
 
 echo "Updating dotfiles and dependencies..."
 
@@ -26,8 +14,15 @@ echo "Updating dotfiles and dependencies..."
 cd $DIR
 git submodule update --init --recursive
 
-echo "Changing the shell of $USER_NAME to zsh."
-chsh -s /usr/bin/zsh $USER_NAME
+echo "Making vimproc..."
+
+cd $DIR/vim/bundle/vimproc.vim
+make
+
+cd $DIR
+
+echo "Changing the shell of $USER to zsh."
+chsh -s /usr/bin/zsh
 
 echo "Symlinking configuration files..."
 
@@ -44,6 +39,5 @@ for f in *; do
 
         echo "Creating symlink from $DIR/$f to $USER_HOME/.$f"
         ln -fs $DIR"/"$f $USER_HOME"/."$f
-        chown -h $USER_NAME:$USER_NAME $USER_HOME"/."$f
     fi
 done
