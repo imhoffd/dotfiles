@@ -33,6 +33,9 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Folds
+set foldmethod=indent
+
 " -------------------------------------
 "  Appearance settings
 " -------------------------------------
@@ -46,6 +49,13 @@ set t_Co=256
 
 let g:molokai_original = 1
 colorscheme molokai
+
+" ------------------------------------
+"  Unite settings
+" ------------------------------------
+
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+let g:unite_source_history_yank_enable = 1
 
 " ------------------------------------
 "  airline settings
@@ -76,5 +86,12 @@ set nowrap
 "  Keyboard shortcuts
 " -------------------------------------
 
-nnoremap <C-p> :Unite file_rec/async<cr>
+" reselect visual block after indent
+vnoremap < <gv
+vnoremap > >gv
 
+nnoremap <C-p> :Unite -no-split file_rec/async<cr>
+nnoremap <C-b> :Unite -no-split buffer<cr>
+nnoremap <space>s :Unite -no-split -quick-match buffer<cr>
+nnoremap <space>y :Unite -no-split history/yank<cr>
+nnoremap <space>/ :Unite -no-split grep:.<cr>
