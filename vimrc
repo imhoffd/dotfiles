@@ -53,12 +53,6 @@ colorscheme molokai
 
 let g:airline_theme = 'badwolf'
 
-" ------------------------------------
-"  ctrlp settings
-" ------------------------------------
-
-let g:ctrlp_map = '<c-p>'
-
 " -------------------------------------
 "  File & backup settings
 " -------------------------------------
