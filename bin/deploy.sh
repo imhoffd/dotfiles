@@ -14,6 +14,13 @@ echo "Updating dotfiles and dependencies..."
 cd $DIR
 git submodule update --init --recursive
 
+echo "Making vimproc..."
+
+cd $DIR/vim/bundle/vimproc.vim
+make
+
+cd $DIR
+
 echo "Changing the shell of $USER to zsh."
 chsh -s /usr/bin/zsh
 
