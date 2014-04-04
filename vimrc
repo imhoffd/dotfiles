@@ -76,12 +76,5 @@ set nowrap
 "  Keyboard shortcuts
 " -------------------------------------
 
-" Show syntax highlighting groups for word under cursor
-nmap <C-S-P> :call <SID>SynStack()<SR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+nnoremap <C-p> :Unite file_rec/async<cr>
 
