@@ -78,7 +78,7 @@ call unite#custom#source('file_rec,file_rec/async', 'max_candidates', 0)
 call unite#filters#sorter_default#use(['sorter_rank'])
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_file_rec_max_cache_files = 0
-let g:unite_source_rec_async_command = 'ag --nocolor --nogroup --ignore ".git" --hidden -g ""'
+" let g:unite_source_rec_async_command = 'ag --nocolor --nogroup --ignore ".git" --hidden -g ""'
 
 " ------------------------------------
 "  neocomplete settings
@@ -121,7 +121,7 @@ set nowrap
 vnoremap < <gv
 vnoremap > >gv
 
-nnoremap <C-p> :Unite -start-insert -no-split file_rec/async<cr>
+nnoremap <C-p> :Unite -start-insert -no-split file_rec<cr>
 nnoremap <C-b> :Unite -no-split buffer<cr>
 nnoremap <space>s :Unite -no-split -quick-match buffer<cr>
 nnoremap <space>y :Unite -no-split history/yank<cr>
