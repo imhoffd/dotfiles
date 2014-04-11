@@ -34,7 +34,10 @@ set t_vb=
 set tm=500
 
 " Folds
-set foldmethod=indent
+" set foldmethod=indent
+
+set cursorline
+set shellcmdflag=-ic
 
 " -------------------------------------
 "  Appearance settings
@@ -99,3 +102,4 @@ nnoremap <C-b> :Unite -no-split buffer<cr>
 nnoremap <space>s :Unite -no-split -quick-match buffer<cr>
 nnoremap <space>y :Unite -no-split history/yank<cr>
 nnoremap <space>/ :Unite -no-split grep:.<cr>
+nnoremap <C-m> :!build_shoutlet<cr>
