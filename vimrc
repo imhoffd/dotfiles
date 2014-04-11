@@ -9,6 +9,23 @@
 "
 " -------------------------------------
 
+" -------------------------------------
+"  Vundle settings
+" -------------------------------------
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Plugin 'gmarik/vundle'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tomasr/molokai'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdcommenter'
+
+filetype plugin indent on
 
 " -------------------------------------
 "  General settings
@@ -16,10 +33,7 @@
 
 " </3 vi
 set nocompatible
-
-" Infect!
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+filetype off
 
 " When searching try to be smart about cases 
 set smartcase
