@@ -13,6 +13,11 @@
 "  Vundle settings
 " -------------------------------------
 
+
+" </3 vi
+set nocompatible
+filetype off
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -24,6 +29,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tomasr/molokai'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'Shougo/neocomplete.vim'
 
 filetype plugin indent on
 
@@ -31,11 +37,7 @@ filetype plugin indent on
 "  General settings
 " -------------------------------------
 
-" </3 vi
-set nocompatible
-filetype off
-
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " For regular expressions turn magic on
@@ -79,6 +81,14 @@ let g:unite_source_file_rec_max_cache_files = 0
 let g:unite_source_rec_async_command = 'ag --nocolor --nogroup --ignore ".git" --hidden -g ""'
 
 " ------------------------------------
+"  neocomplete settings
+" ------------------------------------
+
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+
+" ------------------------------------
 "  airline settings
 " ------------------------------------
 
@@ -117,3 +127,6 @@ nnoremap <space>s :Unite -no-split -quick-match buffer<cr>
 nnoremap <space>y :Unite -no-split history/yank<cr>
 nnoremap <space>/ :Unite -no-split grep:.<cr>
 nnoremap <C-m> :!build_shoutlet<cr>
+inoremap <expr><C-g> neocomplete#undo_completion()
+inoremap <expr><C-l> neocomplete#complete_common_string()
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
