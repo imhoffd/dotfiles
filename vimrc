@@ -73,7 +73,7 @@ colorscheme molokai
 "  Unite settings
 " ------------------------------------
 
-call unite#custom#source('file_rec,file_rec/async', 'matchers', 'matcher_fuzzy')
+call unite#custom#source('file_rec,file_rec/async', 'matchers', ['converter_relative_word', 'matcher_fuzzy'])
 call unite#custom#source('file_rec,file_rec/async', 'max_candidates', 0)
 call unite#filters#sorter_default#use(['sorter_rank'])
 let g:unite_source_history_yank_enable = 1
