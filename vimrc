@@ -28,7 +28,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tomasr/molokai'
 Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'tomtom/tcomment_vim'
 Plugin 'Shougo/neocomplete.vim'
 
 filetype plugin indent on
@@ -53,7 +53,8 @@ set tm=500
 " set foldmethod=indent
 
 set cursorline
-set shellcmdflag=-ic
+" set shellcmdflag=-ci
+" set shell=zsh\ -i
 
 " -------------------------------------
 "  Appearance settings
@@ -76,6 +77,8 @@ colorscheme molokai
 call unite#custom#source('file_rec,file_rec/async', 'matchers', ['converter_relative_word', 'matcher_fuzzy'])
 call unite#custom#source('file_rec,file_rec/async', 'max_candidates', 0)
 call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#custom#profile('', 'smartcase', 1)
+call unite#custom#profile('', 'ignorecase', 1)
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_file_rec_max_cache_files = 0
 " let g:unite_source_rec_async_command = 'ag --nocolor --nogroup --ignore ".git" --hidden -g ""'
@@ -87,6 +90,12 @@ let g:unite_source_file_rec_max_cache_files = 0
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
+
+" ------------------------------------
+"  neocomplete settings
+" ------------------------------------
+call tcomment#SetOption("count", 2)
+let g:tcomment#blank_lines = 0
 
 " ------------------------------------
 "  airline settings
@@ -126,7 +135,9 @@ nnoremap <C-b> :Unite -no-split buffer<cr>
 nnoremap <space>s :Unite -no-split -quick-match buffer<cr>
 nnoremap <space>y :Unite -no-split history/yank<cr>
 nnoremap <space>/ :Unite -no-split grep:.<cr>
+nnoremap <C-u> :GundoToggle<cr>
 nnoremap <C-m> :!build_shoutlet<cr>
+
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
