@@ -13,7 +13,6 @@
 "  Vundle settings
 " -------------------------------------
 
-
 " </3 vi
 set nocompatible
 filetype off
@@ -130,13 +129,12 @@ set nowrap
 vnoremap < <gv
 vnoremap > >gv
 
-nnoremap <C-p> :Unite -start-insert -no-split file_rec<cr>
+" Unite
+nnoremap <C-p> :Unite -start-insert -no-split file_rec/async<cr>
+nnoremap <S-p> :Unite -start-insert -no-split file<cr>
 nnoremap <C-b> :Unite -no-split buffer<cr>
-nnoremap <space>s :Unite -no-split -quick-match buffer<cr>
-nnoremap <space>y :Unite -no-split history/yank<cr>
-nnoremap <space>/ :Unite -no-split grep:.<cr>
-nnoremap <C-u> :GundoToggle<cr>
-nnoremap <C-m> :!build_shoutlet<cr>
+nnoremap <C-y> :Unite -no-split history/yank<cr>
+nnoremap <Space>/ :Unite -no-split grep:.<cr>
 
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()

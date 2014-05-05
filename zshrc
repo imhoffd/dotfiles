@@ -44,3 +44,5 @@ umask 002
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 source ~/.zsh_aliases
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
