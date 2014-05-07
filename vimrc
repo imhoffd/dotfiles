@@ -51,7 +51,6 @@ set tm=500
 " Folds
 " set foldmethod=indent
 
-set cursorline
 " set shellcmdflag=-ci
 " set shell=zsh\ -i
 
@@ -61,6 +60,10 @@ set cursorline
 
 set background=dark
 set t_Co=256
+set hlsearch
+set cursorline
+set listchars=tab:>~,nbsp:_,trail:.
+set list
 
 " ------------------------------------
 "  molokai settings
@@ -135,6 +138,7 @@ nnoremap <S-p> :Unite -start-insert -no-split file<cr>
 nnoremap <C-b> :Unite -no-split buffer<cr>
 nnoremap <C-y> :Unite -no-split history/yank<cr>
 nnoremap <Space>/ :Unite -no-split grep:.<cr>
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
