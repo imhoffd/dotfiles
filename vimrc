@@ -29,6 +29,7 @@ Plugin 'tomasr/molokai'
 Plugin 'bling/vim-airline'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'kshenoy/vim-signature'
 
 filetype plugin indent on
 
@@ -94,7 +95,7 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 
 " ------------------------------------
-"  neocomplete settings
+"  tcomment settings
 " ------------------------------------
 call tcomment#SetOption("count", 2)
 let g:tcomment#blank_lines = 0
