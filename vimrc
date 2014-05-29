@@ -23,6 +23,7 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/unite-outline'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-fugitive'
 Plugin 'dwieeb/molokai'
@@ -130,6 +131,14 @@ set nowrap
 "  Keyboard shortcuts
 " -------------------------------------
 
+" windows
+nnoremap <tab> <c-w>w
+
+" tabs
+nnoremap gwN :tabnew<cr>
+nnoremap gwC :tabclose<cr>
+nnoremap gwT :wincmd T<cr>
+
 " reselect visual block after indent
 vnoremap < <gv
 vnoremap > >gv
@@ -139,9 +148,11 @@ nnoremap <C-p> :Unite -start-insert -no-split file_rec/async<cr>
 nnoremap <S-p> :Unite -start-insert -no-split file<cr>
 nnoremap <C-b> :Unite -no-split buffer<cr>
 nnoremap <C-y> :Unite -no-split history/yank<cr>
+nnoremap <C-h> :Unite -no-split outline<cr>
 nnoremap <Space>/ :Unite -no-split grep:.<cr>
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
+" Neocomplete
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
