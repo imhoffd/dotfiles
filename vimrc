@@ -25,7 +25,7 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tomasr/molokai'
+Plugin 'dwieeb/molokai'
 Plugin 'bling/vim-airline'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'Shougo/neocomplete.vim'
@@ -65,6 +65,7 @@ set hlsearch
 set cursorline
 set listchars=tab:>~,nbsp:_,trail:.
 set list
+set number
 
 " ------------------------------------
 "  molokai settings
