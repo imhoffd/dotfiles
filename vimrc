@@ -31,6 +31,12 @@ Plugin 'bling/vim-airline'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'kshenoy/vim-signature'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'scrooloose/syntastic'
 
 filetype plugin indent on
 
@@ -97,6 +103,13 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 
 " ------------------------------------
+"  EasyMotion  settings
+" ------------------------------------
+
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_do_mapping = 0
+
+" ------------------------------------
 "  tcomment settings
 " ------------------------------------
 call tcomment#SetOption("count", 2)
@@ -128,11 +141,21 @@ set shiftwidth=4
 set nowrap
 
 " -------------------------------------
+"  autocommands
+" -------------------------------------
+
+autocmd BufWritePost  ~/.vimrc source ~/.vimrc
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif"`'")"'")
+
+" -------------------------------------
 "  Keyboard shortcuts
 " -------------------------------------
 
-" windows
-nnoremap <tab> <c-w>w
+map 0 ^
+map Q <Nop>
 
 " tabs
 nnoremap gwN :tabnew<cr>
@@ -156,3 +179,8 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" EasyMotion
+nmap s <Plug>(easymotion-s)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
