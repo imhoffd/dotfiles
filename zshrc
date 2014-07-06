@@ -41,6 +41,7 @@ export EDITOR="vim"
 export VISUAL="vim"
 
 umask 002
+bindkey '^R' history-incremental-pattern-search-backward
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 source ~/.zsh_aliases
