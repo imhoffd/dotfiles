@@ -27,7 +27,9 @@ chsh -s /usr/bin/zsh
 echo "Symlinking configuration files..."
 
 for f in *; do
-    if [[ ! "bin README.md" =~ $f && ! -e "$(cat .gitignore | grep '^'$f'$')" && ! -L $USER_HOME/.$f ]]; then
+    if [[ ! "bin override README.md" =~ $f &&
+          ! -e "$(cat .gitignore | grep '^'$f'$')" &&
+          ! -L $USER_HOME/.$f ]]; then
         if [[ -e $USER_HOME/.$f ]]; then
             read -p "Overwrite $USER_HOME/.$f? (y/n): " -n 1
             echo
@@ -41,3 +43,7 @@ for f in *; do
         ln -fs $DIR"/"$f $USER_HOME"/."$f
     fi
 done
+
+echo "Symlinking overrides..."
+
+ln -fs $DIR"/override/oh-my-zsh/custom/themes" $USER_HOME"/.oh-my-zsh/custom/themes"
