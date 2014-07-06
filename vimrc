@@ -73,6 +73,7 @@ set cursorline
 set listchars=tab:>~,nbsp:_,trail:.
 set list
 set number
+set numberwidth=5
 
 " ------------------------------------
 "  molokai settings
@@ -156,6 +157,11 @@ autocmd BufReadPost *
 
 map 0 ^
 map Q <Nop>
+
+nnoremap <Left> :echoe "Use h"<cr>
+nnoremap <Right> :echoe "Use l"<cr>
+nnoremap <Up> :echoe "Use k"<cr>
+nnoremap <Down> :echoe "Use j"<cr>
 
 " tabs
 nnoremap gwN :tabnew<cr>
