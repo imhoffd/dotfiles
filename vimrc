@@ -56,6 +56,9 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Make esc faster
+set esckeys
+
 " Folds
 " set foldmethod=indent
 
