@@ -37,6 +37,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/syntastic'
+Plugin 'tacroe/unite-mark'
 
 filetype plugin indent on
 
@@ -97,6 +98,14 @@ call unite#custom#profile('', 'ignorecase', 1)
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_file_rec_max_cache_files = 0
 " let g:unite_source_rec_async_command = 'ag --nocolor --nogroup --ignore ".git" --hidden -g ""'
+
+" ------------------------------------
+"  Unite mark settings
+" ------------------------------------
+
+let g:unite_source_mark_marks =
+            \   "abcdefghijklmnopqrstuvwxyz"
+            \ . "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 " ------------------------------------
 "  neocomplete settings
@@ -175,12 +184,16 @@ nnoremap gwT :wincmd T<cr>
 vnoremap < <gv
 vnoremap > >gv
 
+" It is strange this particular movement happens AND yanks
+nnoremap y{ y{}kp
+nnoremap y} y}kp
+
 " Unite
 nnoremap <C-p> :Unite -start-insert -no-split file_rec/async<cr>
 nnoremap <S-p> :Unite -start-insert -no-split file<cr>
 nnoremap <C-b> :Unite -no-split buffer<cr>
 nnoremap <C-y> :Unite -no-split history/yank<cr>
-nnoremap <C-h> :Unite -no-split outline<cr>
+nnoremap <Space>o :Unite -no-split outline<cr>
 nnoremap <Space>/ :Unite -no-split grep:.<cr>
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
