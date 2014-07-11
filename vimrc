@@ -207,6 +207,16 @@ nmap s <Plug>(easymotion-s)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
+" -------------------------------------
+"  Filetype settings for extensions
+" -------------------------------------
+
+au BufRead,BufNewFile *.wsgi set filetype=python
+
+" -------------------------------------
+"  Source a .vimrc.local if it exists
+" -------------------------------------
+
 if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
