@@ -152,12 +152,14 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set nowrap
+set nojoinspaces
 
 " -------------------------------------
 "  autocommands
 " -------------------------------------
 
 autocmd BufWritePost  ~/.vimrc source ~/.vimrc
+autocmd BufReadPre *.rst setlocal textwidth=80
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
@@ -191,8 +193,8 @@ nnoremap y} y}kp
 " Unite
 nnoremap <C-p> :Unite -start-insert -no-split file_rec/async<cr>
 nnoremap <S-p> :Unite -start-insert -no-split file<cr>
-nnoremap <C-b> :Unite -no-split buffer<cr>
-nnoremap <C-y> :Unite -no-split history/yank<cr>
+nnoremap <S-b> :Unite -no-split buffer<cr>
+nnoremap <S-y> :Unite -no-split history/yank<cr>
 nnoremap <Space>o :Unite -no-split outline<cr>
 nnoremap <Space>/ :Unite -no-split grep:.<cr>
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
