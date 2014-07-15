@@ -38,6 +38,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/syntastic'
 Plugin 'tacroe/unite-mark'
+Plugin 'kien/ctrlp.vim'
 
 filetype plugin indent on
 
@@ -66,6 +67,14 @@ set esckeys
 " set shellcmdflag=-ci
 " set shell=zsh\ -i
 
+set wildignore+=*.db,*.o,*.obj
+set wildignore+=*.swp,*.bak,*.lock
+set wildignore+=*.git,*.svn
+set wildignore+=*DS_Store*
+set wildignore+=**/tmp/**
+set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=*.app,*.dmg,*.pdf,*.so
+
 " -------------------------------------
 "  Appearance settings
 " -------------------------------------
@@ -90,13 +99,17 @@ colorscheme molokai
 "  Unite settings
 " ------------------------------------
 
-call unite#custom#source('file_rec,file_rec/async', 'matchers', ['converter_relative_word', 'matcher_fuzzy'])
-call unite#custom#source('file_rec,file_rec/async', 'max_candidates', 0)
+" Until the performance of Unite's file_rec improves, use CtrlP
+
+" call unite#custom#source('file_rec', 'matchers', ['converter_relative_word', 'matcher_fuzzy'])
+" call unite#custom#source('file_rec', 'max_candidates', 0)
+" call unite#custom#source('file_rec', 'ignore_pattern', '\.arc|\.git|java')
 call unite#filters#sorter_default#use(['sorter_rank'])
 call unite#custom#profile('', 'smartcase', 1)
 call unite#custom#profile('', 'ignorecase', 1)
+let g:unite_prompt = '» '
 let g:unite_source_history_yank_enable = 1
-let g:unite_source_file_rec_max_cache_files = 0
+" let g:unite_source_file_rec_max_cache_files = 5000
 " let g:unite_source_rec_async_command = 'ag --nocolor --nogroup --ignore ".git" --hidden -g ""'
 
 " ------------------------------------
@@ -171,6 +184,7 @@ autocmd BufReadPost *
 
 map 0 ^
 map Q <Nop>
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 nnoremap <Left> :echoe "Use h"<cr>
 nnoremap <Right> :echoe "Use l"<cr>
@@ -191,13 +205,12 @@ nnoremap y{ y{}kp
 nnoremap y} y}kp
 
 " Unite
-nnoremap <C-p> :Unite -start-insert -no-split file_rec/async<cr>
+" nnoremap <C-p> :Unite -start-insert -no-split file_rec<cr>
 nnoremap <S-p> :Unite -start-insert -no-split file<cr>
 nnoremap <S-b> :Unite -no-split buffer<cr>
 nnoremap <S-y> :Unite -no-split history/yank<cr>
 nnoremap <Space>o :Unite -no-split outline<cr>
 nnoremap <Space>/ :Unite -no-split grep:.<cr>
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Neocomplete
 inoremap <expr><C-g> neocomplete#undo_completion()
@@ -208,6 +221,10 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 nmap s <Plug>(easymotion-s)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " -------------------------------------
 "  Filetype settings for extensions
