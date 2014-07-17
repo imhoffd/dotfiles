@@ -101,15 +101,15 @@ colorscheme molokai
 
 " Until the performance of Unite's file_rec improves, use CtrlP
 
-" call unite#custom#source('file_rec', 'matchers', ['converter_relative_word', 'matcher_fuzzy'])
-" call unite#custom#source('file_rec', 'max_candidates', 0)
-" call unite#custom#source('file_rec', 'ignore_pattern', '\.arc|\.git|java')
+call unite#custom#source('file_rec', 'matchers', ['converter_relative_word', 'matcher_fuzzy'])
+call unite#custom#source('file_rec', 'max_candidates', 0)
+call unite#custom#source('file_rec', 'ignore_pattern', '\.arc|\.git|java')
 call unite#filters#sorter_default#use(['sorter_rank'])
 call unite#custom#profile('', 'smartcase', 1)
 call unite#custom#profile('', 'ignorecase', 1)
 let g:unite_prompt = '» '
 let g:unite_source_history_yank_enable = 1
-" let g:unite_source_file_rec_max_cache_files = 5000
+let g:unite_source_file_rec_max_cache_files = 5000
 " let g:unite_source_rec_async_command = 'ag --nocolor --nogroup --ignore ".git" --hidden -g ""'
 
 " ------------------------------------
@@ -138,7 +138,7 @@ let g:EasyMotion_do_mapping = 0
 " ------------------------------------
 "  tcomment settings
 " ------------------------------------
-call tcomment#SetOption("count", 2)
+call tcomment#SetOption("count", 1)
 let g:tcomment#blank_lines = 0
 
 " ------------------------------------
@@ -206,7 +206,7 @@ nnoremap y} y}kp
 
 " Unite
 " nnoremap <C-p> :Unite -start-insert -no-split file_rec<cr>
-nnoremap <S-p> :Unite -start-insert -no-split file<cr>
+nnoremap <S-p> :Unite -complete -start-insert -no-split file<cr>
 nnoremap <S-b> :Unite -no-split buffer<cr>
 nnoremap <S-y> :Unite -no-split history/yank<cr>
 nnoremap <Space>o :Unite -no-split outline<cr>
