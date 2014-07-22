@@ -23,6 +23,7 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
+" Plugin 'dwieeb/unite.vim'
 Plugin 'Shougo/unite-outline'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-fugitive'
@@ -38,7 +39,6 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/syntastic'
 Plugin 'tacroe/unite-mark'
-Plugin 'kien/ctrlp.vim'
 
 filetype plugin indent on
 
@@ -99,18 +99,13 @@ colorscheme molokai
 "  Unite settings
 " ------------------------------------
 
-" Until the performance of Unite's file_rec improves, use CtrlP
-
-call unite#custom#source('file_rec', 'matchers', ['converter_relative_word', 'matcher_fuzzy'])
-call unite#custom#source('file_rec', 'max_candidates', 0)
-call unite#custom#source('file_rec', 'ignore_pattern', '\.arc|\.git|java')
+call unite#custom#source('file_rec, file_rec/async, file_rec/git', 'matchers', ['converter_relative_word', 'matcher_fuzzy'])
+call unite#custom#source('file_rec, file_rec/async, file_rec/git', 'ignore_pattern', 'java')
 call unite#filters#sorter_default#use(['sorter_rank'])
 call unite#custom#profile('', 'smartcase', 1)
 call unite#custom#profile('', 'ignorecase', 1)
 let g:unite_prompt = '» '
 let g:unite_source_history_yank_enable = 1
-let g:unite_source_file_rec_max_cache_files = 5000
-" let g:unite_source_rec_async_command = 'ag --nocolor --nogroup --ignore ".git" --hidden -g ""'
 
 " ------------------------------------
 "  Unite mark settings
@@ -205,8 +200,8 @@ nnoremap y{ y{}kp
 nnoremap y} y}kp
 
 " Unite
-" nnoremap <C-p> :Unite -start-insert -no-split file_rec<cr>
-nnoremap <S-p> :Unite -complete -start-insert -no-split file<cr>
+nnoremap <C-p> :Unite -start-insert -no-split file_rec/git<cr>
+nnoremap <S-p> :Unite -complete -no-split file<cr>
 nnoremap <S-b> :Unite -no-split buffer<cr>
 nnoremap <S-y> :Unite -no-split history/yank<cr>
 nnoremap <Space>o :Unite -no-split outline<cr>
@@ -221,10 +216,6 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 nmap s <Plug>(easymotion-s)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
-
-" CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
 
 " -------------------------------------
 "  Filetype settings for extensions
