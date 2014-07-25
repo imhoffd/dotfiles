@@ -20,6 +20,9 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" -------------------------------------
+"  Plugins
+" -------------------------------------
 Plugin 'gmarik/vundle'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
@@ -27,7 +30,6 @@ Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/unite-outline'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-fugitive'
-Plugin 'dwieeb/molokai'
 Plugin 'bling/vim-airline'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'Shougo/neocomplete.vim'
@@ -41,6 +43,12 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tacroe/unite-mark'
 Plugin 'jnwhiteh/vim-golang'
 " Plugin 'severin-lemaignan/vim-minimap' " This one is one to watch -- Sublime-like minimap
+
+" -------------------------------------
+"  Themes
+" -------------------------------------
+Plugin 'dwieeb/molokai'
+Plugin 'nanotech/jellybeans.vim'
 
 filetype plugin indent on
 
@@ -83,6 +91,8 @@ set wildignore+=*.app,*.dmg,*.pdf,*.so
 "  Appearance settings
 " -------------------------------------
 
+colorscheme jellybeans
+
 set background=dark
 set t_Co=256
 set hlsearch
@@ -97,7 +107,13 @@ set numberwidth=5
 " ------------------------------------
 
 let g:molokai_original = 1
-colorscheme molokai
+
+" ------------------------------------
+"  airline settings
+" ------------------------------------
+
+let g:airline_theme = 'jellybeans'
+let g:airline#extensions#tabline#enabled = 1
 
 " ------------------------------------
 "  Unite settings
@@ -139,12 +155,6 @@ let g:EasyMotion_do_mapping = 0
 " ------------------------------------
 call tcomment#SetOption("count", 1)
 let g:tcomment#blank_lines = 0
-
-" ------------------------------------
-"  airline settings
-" ------------------------------------
-
-let g:airline_theme = 'badwolf'
 
 " -------------------------------------
 "  File & backup settings
