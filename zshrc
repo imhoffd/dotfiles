@@ -46,5 +46,8 @@ bindkey '^R' history-incremental-pattern-search-backward
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 source ~/.zsh_aliases
 
+export GOPATH=$HOME/.go
+
 PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH
 PATH=$HOME/.python/bin:$PATH # Add virtualenv PATH
+PATH=$GOPATH/bin:$PATH

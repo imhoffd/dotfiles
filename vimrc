@@ -39,6 +39,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/syntastic'
 Plugin 'tacroe/unite-mark'
+Plugin 'jnwhiteh/vim-golang'
 
 filetype plugin indent on
 
