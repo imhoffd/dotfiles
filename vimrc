@@ -40,6 +40,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/syntastic'
 Plugin 'tacroe/unite-mark'
 Plugin 'jnwhiteh/vim-golang'
+" Plugin 'severin-lemaignan/vim-minimap' " This one is one to watch -- Sublime-like minimap
 
 filetype plugin indent on
 
