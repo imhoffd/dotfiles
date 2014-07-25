@@ -48,6 +48,8 @@ filetype plugin indent on
 "  General settings
 " -------------------------------------
 
+set mouse=a
+
 " When searching try to be smart about cases
 set smartcase
 
