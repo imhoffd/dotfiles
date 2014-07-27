@@ -9,52 +9,66 @@
 "
 " -------------------------------------
 
-" -------------------------------------
-"  Vundle settings
-" -------------------------------------
-
 " </3 vi
 set nocompatible
 filetype off
+
+" -------------------------------------
+"  Vundle settings
+" -------------------------------------
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " -------------------------------------
-"  Plugins
+"  Essential Plugins
 " -------------------------------------
+
 Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-sensible'
 Plugin 'Shougo/vimproc.vim'
+
+" -------------------------------------
+"  Productivity Plugins
+" -------------------------------------
+
 Plugin 'Shougo/unite.vim'
 " Plugin 'dwieeb/unite.vim'
 Plugin 'Shougo/unite-outline'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
-Plugin 'tomtom/tcomment_vim'
+Plugin 'tacroe/unite-mark'
+Plugin 'ujihisa/unite-colorscheme'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tomtom/tcomment_vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'Lokaltog/vim-easymotion'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'scrooloose/syntastic'
-Plugin 'tacroe/unite-mark'
-Plugin 'jnwhiteh/vim-golang'
 " Plugin 'severin-lemaignan/vim-minimap' " This one is one to watch -- Sublime-like minimap
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " -------------------------------------
-"  Themes
+"  Integration Plugins
 " -------------------------------------
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'jnwhiteh/vim-golang'
+" Plugin 'scrooloose/syntastic'
+
+" -------------------------------------
+"  Appearance & Theme Plugins
+" -------------------------------------
+
+Plugin 'bling/vim-airline'
 Plugin 'dwieeb/molokai'
 Plugin 'nanotech/jellybeans.vim'
-
-filetype plugin indent on
 
 " -------------------------------------
 "  General settings
 " -------------------------------------
+
+filetype plugin indent on
 
 set mouse=a
 
@@ -99,6 +113,26 @@ set list
 set number
 set numberwidth=5
 
+" -------------------------------------
+"  File & backup settings
+" -------------------------------------
+
+set nobackup
+set nowb
+set noswapfile
+
+" -------------------------------------
+"  Text settings
+" -------------------------------------
+
+" Use spaces, damn it!
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set nowrap
+set nojoinspaces
+
 " ------------------------------------
 "  molokai settings
 " ------------------------------------
@@ -141,7 +175,7 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 
 " ------------------------------------
-"  EasyMotion  settings
+"  EasyMotion settings
 " ------------------------------------
 
 let g:EasyMotion_smartcase = 1
@@ -152,26 +186,6 @@ let g:EasyMotion_do_mapping = 0
 " ------------------------------------
 call tcomment#SetOption("count", 1)
 let g:tcomment#blank_lines = 0
-
-" -------------------------------------
-"  File & backup settings
-" -------------------------------------
-
-set nobackup
-set nowb
-set noswapfile
-
-" -------------------------------------
-"  Text settings
-" -------------------------------------
-
-" Use spaces, damn it!
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set nowrap
-set nojoinspaces
 
 " -------------------------------------
 "  autocommands
