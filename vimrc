@@ -76,9 +76,6 @@ set esckeys
 " Folds
 " set foldmethod=indent
 
-" set shellcmdflag=-ci
-" set shell=zsh\ -i
-
 set wildignore+=*.db,*.o,*.obj
 set wildignore+=*.swp,*.bak,*.lock
 set wildignore+=*.git,*.svn
@@ -191,7 +188,10 @@ autocmd BufReadPost *
 "  Keyboard shortcuts
 " -------------------------------------
 
-map 0 ^
+let mapleader=","
+
+inoremap jk <Esc>
+
 map Q <Nop>
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
