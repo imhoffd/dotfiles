@@ -55,6 +55,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jnwhiteh/vim-golang'
 " Plugin 'scrooloose/syntastic'
+Plugin 'vim-scripts/smarty-syntax'
 
 " -------------------------------------
 "  Appearance & Theme Plugins
@@ -197,6 +198,7 @@ autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif"`'")"'")
+au BufRead,BufNewFile *.tmpl set filetype=smarty
 
 " -------------------------------------
 "  Keyboard shortcuts
