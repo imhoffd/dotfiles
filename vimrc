@@ -100,6 +100,8 @@ set wildignore+=**/tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*.app,*.dmg,*.pdf,*.so
 
+set completeopt-=preview
+
 " -------------------------------------
 "  Appearance settings
 " -------------------------------------
