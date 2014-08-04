@@ -64,6 +64,7 @@ Plugin 'vim-scripts/smarty-syntax'
 Plugin 'bling/vim-airline'
 Plugin 'dwieeb/molokai'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'edkolev/tmuxline.vim'
 
 " -------------------------------------
 "  General settings
@@ -185,8 +186,21 @@ let g:EasyMotion_do_mapping = 0
 " ------------------------------------
 "  tcomment settings
 " ------------------------------------
+
 call tcomment#SetOption("count", 1)
 let g:tcomment#blank_lines = 0
+
+" ------------------------------------
+"  tmuxline settings
+" ------------------------------------
+
+let g:tmuxline_preset = 'nightly_fox'
+let g:tmuxline_separators = {
+    \ 'left' : '',
+    \ 'left_alt': '>',
+    \ 'right' : '',
+    \ 'right_alt' : '<',
+    \ 'space' : ' '}
 
 " -------------------------------------
 "  autocommands
