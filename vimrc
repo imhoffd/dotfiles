@@ -54,7 +54,7 @@ Plugin 'rhysd/clever-f.vim'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'jnwhiteh/vim-golang'
-" Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/smarty-syntax'
 
 " -------------------------------------
