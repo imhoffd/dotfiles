@@ -47,6 +47,7 @@ Plugin 'tpope/vim-unimpaired'
 " Plugin 'severin-lemaignan/vim-minimap' " This one is one to watch -- Sublime-like minimap
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rhysd/clever-f.vim'
+Plugin 'davidhalter/jedi-vim'
 
 " -------------------------------------
 "  Integration Plugins
@@ -65,6 +66,14 @@ Plugin 'bling/vim-airline'
 Plugin 'dwieeb/molokai'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'edkolev/tmuxline.vim'
+
+" -------------------------------------
+"  Misc. Awesome Plugins
+" -------------------------------------
+
+Plugin 'supermomonga/jazzradio.vim'
+Plugin 'mattn/flappyvird-vim'
+Plugin 'vim-scripts/TeTrIs.vim'
 
 " -------------------------------------
 "  General settings
@@ -177,6 +186,14 @@ let g:unite_source_mark_marks =
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
+"
+" ------------------------------------
+"  jedi settings
+" ------------------------------------
+
+let g:jedi#popup_select_first = 0
+let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#popup_on_dot = 0
 
 " ------------------------------------
 "  EasyMotion settings
@@ -208,7 +225,7 @@ let g:tmuxline_separators = {
 "  autocommands
 " -------------------------------------
 
-autocmd BufWritePost  ~/.vimrc source ~/.vimrc
+autocmd BufWritePost ~/.vimrc source ~/.vimrc
 autocmd BufReadPre *.rst setlocal textwidth=80
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -260,8 +277,6 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " EasyMotion
 nmap s <Plug>(easymotion-s)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
 
 " -------------------------------------
 "  Filetype settings for extensions
