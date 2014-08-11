@@ -222,7 +222,6 @@ autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif"`'")"'")
-au BufRead,BufNewFile *.tmpl set filetype=smarty
 
 " -------------------------------------
 "  Keyboard shortcuts
@@ -274,6 +273,7 @@ nmap s <Plug>(easymotion-s)
 " -------------------------------------
 
 au BufRead,BufNewFile *.wsgi set filetype=python
+au BufRead,BufNewFile *.tmpl set filetype=smarty
 
 " -------------------------------------
 "  Source a .vimrc.local if it exists
