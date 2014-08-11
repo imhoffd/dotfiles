@@ -47,7 +47,6 @@ Plugin 'tpope/vim-unimpaired'
 " Plugin 'severin-lemaignan/vim-minimap' " This one is one to watch -- Sublime-like minimap
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rhysd/clever-f.vim'
-Plugin 'davidhalter/jedi-vim'
 
 " -------------------------------------
 "  Integration Plugins
@@ -186,14 +185,6 @@ let g:unite_source_mark_marks =
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-"
-" ------------------------------------
-"  jedi settings
-" ------------------------------------
-
-let g:jedi#popup_select_first = 0
-let g:jedi#use_tabs_not_buffers = 0
-let g:jedi#popup_on_dot = 0
 
 " ------------------------------------
 "  EasyMotion settings
