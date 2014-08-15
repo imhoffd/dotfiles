@@ -47,6 +47,7 @@ Plugin 'tpope/vim-unimpaired'
 " Plugin 'severin-lemaignan/vim-minimap' " This one is one to watch -- Sublime-like minimap
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rhysd/clever-f.vim'
+Plugin 'justincampbell/vim-eighties'
 
 " -------------------------------------
 "  Integration Plugins
@@ -211,6 +212,15 @@ let g:tmuxline_separators = {
     \ 'right' : '',
     \ 'right_alt' : '<',
     \ 'space' : ' '}
+
+" -------------------------------------
+"  eighties
+" -------------------------------------
+
+let g:eighties_enabled = 1
+let g:eighties_minimum_width = 80
+let g:eighties_extra_width = 0 " Increase this if you want some extra room
+let g:eighties_compute = 1 " Disable this if you just want the minimum + extra
 
 " -------------------------------------
 "  autocommands
