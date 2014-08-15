@@ -10,70 +10,81 @@
 " -------------------------------------
 
 " </3 vi
-set nocompatible
-filetype off
+if has('vim_starting')
+    set nocompatible
+    filetype off
+
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+let g:make = 'gmake'
+
+if system('uname -o') =~ '^GNU/'
+    let g:make = 'make'
+endif
 
 " -------------------------------------
-"  Vundle settings
+"  Neobundle settings
 " -------------------------------------
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " -------------------------------------
 "  Essential Plugins
 " -------------------------------------
 
-Plugin 'gmarik/vundle'
-Plugin 'tpope/vim-sensible'
-Plugin 'Shougo/vimproc.vim'
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'tpope/vim-sensible'
+NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': g:make}}
 
 " -------------------------------------
 "  Productivity Plugins
 " -------------------------------------
 
-Plugin 'Shougo/unite.vim'
-" Plugin 'dwieeb/unite.vim'
-Plugin 'Shougo/unite-outline'
-Plugin 'tacroe/unite-mark'
-Plugin 'ujihisa/unite-colorscheme'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'kshenoy/vim-signature'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-unimpaired'
-" Plugin 'severin-lemaignan/vim-minimap' " This one is one to watch -- Sublime-like minimap
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'rhysd/clever-f.vim'
-Plugin 'justincampbell/vim-eighties'
+NeoBundle 'Shougo/unite.vim'
+" NeoBundle 'dwieeb/unite.vim'
+NeoBundle 'Shougo/unite-outline'
+NeoBundle 'tacroe/unite-mark'
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'kshenoy/vim-signature'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-unimpaired'
+" NeoBundle 'severin-lemaignan/vim-minimap' " This one is one to watch -- Sublime-like minimap
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'rhysd/clever-f.vim'
+NeoBundle 'justincampbell/vim-eighties'
 
 " -------------------------------------
 "  Integration Plugins
 " -------------------------------------
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'jnwhiteh/vim-golang'
-Plugin 'scrooloose/syntastic'
-Plugin 'vim-scripts/smarty-syntax'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'jnwhiteh/vim-golang'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'vim-scripts/smarty-syntax'
 
 " -------------------------------------
 "  Appearance & Theme Plugins
 " -------------------------------------
 
-Plugin 'bling/vim-airline'
-Plugin 'dwieeb/molokai'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'edkolev/tmuxline.vim'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'dwieeb/molokai'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'edkolev/tmuxline.vim'
 
 " -------------------------------------
 "  Misc. Awesome Plugins
 " -------------------------------------
 
-Plugin 'supermomonga/jazzradio.vim'
-Plugin 'mattn/flappyvird-vim'
-Plugin 'vim-scripts/TeTrIs.vim'
+NeoBundle 'supermomonga/jazzradio.vim'
+NeoBundle 'mattn/flappyvird-vim'
+NeoBundle 'vim-scripts/TeTrIs.vim'
+
+call neobundle#end()
 
 " -------------------------------------
 "  General settings
@@ -292,3 +303,5 @@ au BufRead,BufNewFile *.tmpl set filetype=smarty
 if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
+
+NeoBundleCheck
