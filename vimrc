@@ -276,7 +276,7 @@ nnoremap y} y}kp
 
 " Unite
 nnoremap <C-p> :Unite -start-insert -no-split file_rec/git<cr>
-nnoremap <S-p> :Unite -complete -no-split file<cr>
+nnoremap <S-p> :Unite -complete -no-split file file/new directory/new<cr>
 nnoremap <S-b> :Unite -no-split buffer<cr>
 nnoremap <S-y> :Unite -no-split history/yank<cr>
 nnoremap <Space>o :Unite -no-split outline<cr>
