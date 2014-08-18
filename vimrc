@@ -66,6 +66,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'jnwhiteh/vim-golang'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'vim-scripts/smarty-syntax'
+NeoBundle 'derekwyatt/vim-scala'
 
 " -------------------------------------
 "  Appearance & Theme Plugins
