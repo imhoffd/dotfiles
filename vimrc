@@ -296,6 +296,8 @@ nmap s <Plug>(easymotion-s)
 
 au BufRead,BufNewFile *.wsgi set filetype=python
 au BufRead,BufNewFile *.tmpl set filetype=smarty
+au BufRead,BufNewFile *.module set filetype=php
+au BufRead,BufNewFile *.install set filetype=php
 
 " -------------------------------------
 "  Source a .vimrc.local if it exists
