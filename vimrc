@@ -56,7 +56,7 @@ NeoBundle 'tpope/vim-unimpaired'
 " NeoBundle 'severin-lemaignan/vim-minimap' " This one is one to watch -- Sublime-like minimap
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'rhysd/clever-f.vim'
-NeoBundle 'justincampbell/vim-eighties'
+NeoBundle 'wellle/targets.vim'
 
 " -------------------------------------
 "  Integration Plugins
@@ -226,20 +226,12 @@ let g:tmuxline_separators = {
     \ 'space' : ' '}
 
 " -------------------------------------
-"  eighties
-" -------------------------------------
-
-let g:eighties_enabled = 1
-let g:eighties_minimum_width = 80
-let g:eighties_extra_width = 0 " Increase this if you want some extra room
-let g:eighties_compute = 1 " Disable this if you just want the minimum + extra
-
-" -------------------------------------
 "  autocommands
 " -------------------------------------
 
 autocmd BufWritePost ~/.vimrc source ~/.vimrc
 autocmd BufReadPre *.rst setlocal textwidth=80
+autocmd BufReadPre *.php setlocal nocursorline
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
