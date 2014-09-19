@@ -178,8 +178,8 @@ let g:airline#extensions#tabline#enabled = 1
 call unite#custom#source('file_rec, file_rec/async, file_rec/git', 'matchers', ['converter_relative_word', 'matcher_fuzzy'])
 call unite#custom#source('file_rec, file_rec/async, file_rec/git', 'ignore_pattern', 'java')
 call unite#filters#sorter_default#use(['sorter_rank'])
-call unite#custom#profile('', 'smartcase', 1)
-call unite#custom#profile('', 'ignorecase', 1)
+call unite#custom#profile('default', 'context.smartcase', 1)
+call unite#custom#profile('default', 'context.ignorecase', 1)
 let g:unite_prompt = '» '
 let g:unite_source_history_yank_enable = 1
 
