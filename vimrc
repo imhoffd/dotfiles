@@ -17,11 +17,7 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-let g:make = 'gmake'
-
-if system('uname -o') =~ '^GNU/'
-    let g:make = 'make'
-endif
+let g:make = 'make'
 
 " -------------------------------------
 "  Neobundle settings
