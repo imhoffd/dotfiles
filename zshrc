@@ -44,11 +44,22 @@ umask 002
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey -M viins 'jk' vi-cmd-mode
 
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-source ~/.zsh_aliases
-
 export GOPATH=$HOME/.go
 
 PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH
 PATH=$HOME/.python/bin:$PATH # Add virtualenv PATH
 PATH=$GOPATH/bin:$PATH
+
+# shortcuts
+alias    vi=vim
+#alias    ps="ps aux | grep \"^$(id -nu)\""
+alias    ll="ls -alh"
+alias    l="ll"
+alias    df="df -h"
+alias    du="du -h"
+alias    tmux="TERM=screen-256color-bce tmux"
+alias    tmuxa="tmux attach-session"
+alias    tmuxl="tmux list-sessions"
+function vman() { man "$*" | vi -; }
+
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
