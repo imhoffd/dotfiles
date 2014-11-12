@@ -46,6 +46,7 @@ bindkey -M viins 'jk' vi-cmd-mode
 
 export GOPATH=$HOME/.go
 
+PATH=$HOME/bin:$PATH
 PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH
 PATH=$HOME/.python/bin:$PATH # Add virtualenv PATH
 PATH=$GOPATH/bin:$PATH
