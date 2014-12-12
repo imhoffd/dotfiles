@@ -32,7 +32,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git npm tmux symfony2 web-search vi-mode)
+plugins=(git tmux symfony2 web-search vi-mode)
 # plugins=(composer)
 
 source $ZSH/oh-my-zsh.sh
@@ -48,6 +48,8 @@ export GOPATH=$HOME/.go
 
 PATH=$HOME/bin:$PATH
 PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH
+PATH=$HOME/.python2.7/bin:$PATH # Add virtualenv PATH
+PATH=$HOME/.python3.4/bin:$PATH # Add virtualenv PATH
 PATH=$HOME/.python/bin:$PATH # Add virtualenv PATH
 PATH=$GOPATH/bin:$PATH
 
