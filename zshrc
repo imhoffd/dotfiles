@@ -47,10 +47,9 @@ bindkey -M viins 'jk' vi-cmd-mode
 export GOPATH=$HOME/.go
 
 PATH=$HOME/bin:$PATH
+VIRTUAL_ENV_DISABLE_PROMPT=true
+test -z "$VIRTUAL_ENV" && source $HOME/.python/bin/activate
 PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH
-PATH=$HOME/.python2.7/bin:$PATH # Add virtualenv PATH
-PATH=$HOME/.python3.4/bin:$PATH # Add virtualenv PATH
-PATH=$HOME/.python/bin:$PATH # Add virtualenv PATH
 PATH=$GOPATH/bin:$PATH
 
 # shortcuts
