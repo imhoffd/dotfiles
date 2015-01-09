@@ -64,6 +64,7 @@ NeoBundle 'jnwhiteh/vim-golang'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'vim-scripts/smarty-syntax'
 NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'evidens/vim-twig'
 
 " -------------------------------------
 "  Appearance & Theme Plugins
