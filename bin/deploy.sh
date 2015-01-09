@@ -4,11 +4,18 @@ GRAY="\033[37m"
 GREEN="\033[32m"
 RED="\033[31m"
 END_COLOR="\033[0m"
+
+if [[ $1 ]]; then
+    user=$1
+else
+    user=$USER
+fi
+
 DIR="$( dirname "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" )"
-USER_HOME=$(eval echo ~${USER})
+USER_HOME=$(eval echo ~$user)
 
 attempt () {
-    output=$(eval $1)
+    output=$(eval $1 2>&1)
 
     if [[ $? != 0 ]]; then
         echo -e $RED$1" failed:"$END_COLOR
@@ -16,10 +23,6 @@ attempt () {
         exit 1
     fi
 }
-
-attempt "echo hey; exit 1"
-# attempt "rmdir asdf"
-exit 1
 
 echo "Please ensure the following are installed:"
 echo -e $GRAY" - zsh"$END_COLOR
@@ -70,9 +73,9 @@ done
 
 echo -e $GREEN"   done!"$END_COLOR
 
-# if [[ ! -L $USER_HOME"/.oh-my-zsh/custom/themes" ]]; then
+if [[ ! -L $USER_HOME"/.oh-my-zsh/custom/themes" ]]; then
     echo "Symlinking overrides..."
     attempt "rmdir $USER_HOME/.oh-my-zsh/custom/themes"
     ln -snv $DIR"/override/oh-my-zsh/custom/themes" $USER_HOME"/.oh-my-zsh/custom"
     echo -e $GREEN"   done!"$END_COLOR
-# fi
+fi
