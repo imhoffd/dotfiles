@@ -24,32 +24,36 @@ attempt () {
     fi
 }
 
-echo "Please ensure the following are installed:"
-echo -e $GRAY" - zsh"$END_COLOR
-echo -e $GRAY" - vim"$END_COLOR
+if [[ $1 ]]; then
+    echo "Username specified - skipping initial setup."
+else
+    echo "Please ensure the following are installed:"
+    echo -e $GRAY" - zsh"$END_COLOR
+    echo -e $GRAY" - vim"$END_COLOR
 
-echo "Updating dotfiles and dependencies..."
+    echo "Updating dotfiles and dependencies..."
 
-# Update dotfiles submodules
-cd $DIR
-git submodule update --init --recursive
+    # Update dotfiles submodules
+    cd $DIR
+    git submodule update --init --recursive
 
-echo -e $GREEN"   done!"$END_COLOR
+    echo -e $GREEN"   done!"$END_COLOR
 
-echo "Making vimproc..."
+    echo "Making vimproc..."
 
-cd $DIR/vim/bundle/vimproc.vim
-# attempt make
+    cd $DIR/vim/bundle/vimproc.vim
+    attempt make
 
-echo -e $GREEN"   done!"$END_COLOR
-
-cd $DIR
-
-if [[ $ZSH_NAME ]]; then
-    echo "Changing the shell of $USER to zsh."
-    chsh -s /usr/bin/zsh
     echo -e $GREEN"   done!"$END_COLOR
 fi
+
+if [[ $ZSH_NAME ]]; then
+    echo "Changing the shell of $user to zsh."
+    chsh -s /usr/bin/zsh $user
+    echo -e $GREEN"   done!"$END_COLOR
+fi
+
+cd $DIR
 
 echo "Symlinking configuration files..."
 
@@ -66,8 +70,8 @@ for f in *; do
             fi
         fi
 
-        echo "Creating symlink from $DIR/$f to $USER_HOME/.$f"
-        ln -fs $DIR"/"$f $USER_HOME"/."$f
+        ln -fsv $DIR"/"$f $USER_HOME"/."$f
+        chown -h $user:$user $USER_HOME"/."$f
     fi
 done
 
