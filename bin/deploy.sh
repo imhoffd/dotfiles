@@ -38,16 +38,9 @@ else
     git submodule update --init --recursive
 
     echo -e $GREEN"   done!"$END_COLOR
-
-    echo "Making vimproc..."
-
-    cd $DIR/vim/bundle/vimproc.vim
-    attempt make
-
-    echo -e $GREEN"   done!"$END_COLOR
 fi
 
-if [[ $ZSH_NAME ]]; then
+if [[ -z $ZSH_NAME ]]; then
     echo "Changing the shell of $user to zsh."
     chsh -s /usr/bin/zsh $user
     echo -e $GREEN"   done!"$END_COLOR
@@ -79,7 +72,18 @@ echo -e $GREEN"   done!"$END_COLOR
 
 if [[ ! -L $USER_HOME"/.oh-my-zsh/custom/themes" ]]; then
     echo "Symlinking overrides..."
-    attempt "rmdir $USER_HOME/.oh-my-zsh/custom/themes"
+    rmdir $USER_HOME/.oh-my-zsh/custom/themes > /dev/null 2>&1
     ln -snv $DIR"/override/oh-my-zsh/custom/themes" $USER_HOME"/.oh-my-zsh/custom"
+    echo -e $GREEN"   done!"$END_COLOR
+fi
+
+vi -c ":q"
+
+if [[ -z $1 ]]; then
+    echo "Making vimproc..."
+
+    cd $DIR/vim/bundle/vimproc.vim
+    attempt make
+
     echo -e $GREEN"   done!"$END_COLOR
 fi
