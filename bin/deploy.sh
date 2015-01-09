@@ -1,12 +1,29 @@
 #!/bin/bash
 
+GRAY="\033[37m"
+GREEN="\033[32m"
+RED="\033[31m"
+END_COLOR="\033[0m"
 DIR="$( dirname "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" )"
-
 USER_HOME=$(eval echo ~${USER})
 
-echo "Please ensure the following packages are installed."
-echo "zsh"
-echo "vim"
+attempt () {
+    output=$(eval $1)
+
+    if [[ $? != 0 ]]; then
+        echo -e $RED$1" failed:"$END_COLOR
+        echo "$output"
+        exit 1
+    fi
+}
+
+attempt "echo hey; exit 1"
+# attempt "rmdir asdf"
+exit 1
+
+echo "Please ensure the following are installed:"
+echo -e $GRAY" - zsh"$END_COLOR
+echo -e $GRAY" - vim"$END_COLOR
 
 echo "Updating dotfiles and dependencies..."
 
@@ -14,15 +31,22 @@ echo "Updating dotfiles and dependencies..."
 cd $DIR
 git submodule update --init --recursive
 
+echo -e $GREEN"   done!"$END_COLOR
+
 echo "Making vimproc..."
 
 cd $DIR/vim/bundle/vimproc.vim
-make
+# attempt make
+
+echo -e $GREEN"   done!"$END_COLOR
 
 cd $DIR
 
-echo "Changing the shell of $USER to zsh."
-chsh -s /usr/bin/zsh
+if [[ $ZSH_NAME ]]; then
+    echo "Changing the shell of $USER to zsh."
+    chsh -s /usr/bin/zsh
+    echo -e $GREEN"   done!"$END_COLOR
+fi
 
 echo "Symlinking configuration files..."
 
@@ -44,6 +68,11 @@ for f in *; do
     fi
 done
 
-echo "Symlinking overrides..."
+echo -e $GREEN"   done!"$END_COLOR
 
-ln -sfn $DIR"/override/oh-my-zsh/custom/themes" $USER_HOME"/.oh-my-zsh/custom"
+# if [[ ! -L $USER_HOME"/.oh-my-zsh/custom/themes" ]]; then
+    echo "Symlinking overrides..."
+    attempt "rmdir $USER_HOME/.oh-my-zsh/custom/themes"
+    ln -snv $DIR"/override/oh-my-zsh/custom/themes" $USER_HOME"/.oh-my-zsh/custom"
+    echo -e $GREEN"   done!"$END_COLOR
+# fi
