@@ -46,4 +46,4 @@ done
 
 echo "Symlinking overrides..."
 
-ln -fs $DIR"/override/oh-my-zsh/custom/themes" $USER_HOME"/.oh-my-zsh/custom/themes"
+ln -sfn $DIR"/override/oh-my-zsh/custom/themes" $USER_HOME"/.oh-my-zsh/custom"
