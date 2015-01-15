@@ -65,6 +65,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'vim-scripts/smarty-syntax'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'evidens/vim-twig'
+NeoBundle 'wting/rust.vim'
 
 " -------------------------------------
 "  Appearance & Theme Plugins
