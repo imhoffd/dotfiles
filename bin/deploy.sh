@@ -28,8 +28,10 @@ if [[ $1 ]]; then
     echo "Username specified - skipping initial setup."
 else
     echo "Please ensure the following are installed:"
+    echo -e $GRAY" - gcc"$END_COLOR
     echo -e $GRAY" - zsh"$END_COLOR
     echo -e $GRAY" - vim"$END_COLOR
+    echo -e $GRAY" - tmux"$END_COLOR
 
     echo "Updating dotfiles and dependencies..."
 
