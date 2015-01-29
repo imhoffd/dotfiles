@@ -156,6 +156,7 @@ set softtabstop=4
 set shiftwidth=4
 set nowrap
 set nojoinspaces
+set diffopt+=vertical
 
 " ------------------------------------
 "  molokai settings
