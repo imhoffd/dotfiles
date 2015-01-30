@@ -283,10 +283,10 @@ nnoremap y{ y{}kp
 nnoremap y} y}kp
 
 " Unite
-nnoremap <C-p> :Unite -start-insert -no-split file_rec/git<cr>
-nnoremap <S-p> :Unite -complete -no-split file file/new directory/new<cr>
-nnoremap <S-b> :Unite -no-split buffer<cr>
-nnoremap <S-y> :Unite -no-split history/yank<cr>
+nnoremap <Space>p :Unite -start-insert -no-split file_rec/git<cr>
+nnoremap <Space>f :Unite -complete -no-split file file/new directory/new<cr>
+nnoremap <Space>b :Unite -no-split buffer<cr>
+nnoremap <Space>y :Unite -no-split history/yank<cr>
 nnoremap <Space>o :Unite -no-split outline<cr>
 nnoremap <Space>/ :Unite -no-split grep:.<cr>
 
