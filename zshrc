@@ -44,7 +44,8 @@ umask 002
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey -M viins 'jk' vi-cmd-mode
 
-export GOPATH=$HOME/.go
+export GOROOT=$HOME/src/go
+export GOPATH=$HOME/scripts/go
 
 PATH=$HOME/bin:$PATH
 PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH
