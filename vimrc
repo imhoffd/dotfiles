@@ -59,13 +59,19 @@ NeoBundle 'wellle/targets.vim'
 "  Integration Plugins
 " -------------------------------------
 
-NeoBundle 'tpope/vim-fugitive'
+" go
 NeoBundle 'jnwhiteh/vim-golang'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'vim-scripts/smarty-syntax'
+" scala
 NeoBundle 'derekwyatt/vim-scala'
+" php
 NeoBundle 'evidens/vim-twig'
+NeoBundle 'vim-scripts/smarty-syntax'
+NeoBundle 'dwieeb/php-getter-setter.vim'
+" rust
 NeoBundle 'wting/rust.vim'
+" misc
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-fugitive'
 
 " -------------------------------------
 "  Appearance & Theme Plugins
