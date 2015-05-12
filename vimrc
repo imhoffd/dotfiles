@@ -72,6 +72,10 @@ NeoBundle 'wting/rust.vim'
 " misc
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-fugitive'
+" coffee
+NeoBundle 'kchmck/vim-coffee-script'
+" scss
+NeoBundle 'cakebaker/scss-syntax.vim'
 
 " -------------------------------------
 "  Appearance & Theme Plugins
@@ -243,6 +247,9 @@ let g:tmuxline_separators = {
 " -------------------------------------
 
 autocmd BufWritePost ~/.vimrc source ~/.vimrc
+autocmd BufReadPre *.scss setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
+autocmd BufReadPre *.scala setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
+autocmd BufReadPre *.coffee setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 autocmd BufReadPre *.rst setlocal textwidth=80
 autocmd BufReadPre *.php setlocal nocursorline
 autocmd BufReadPost *
