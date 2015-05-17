@@ -298,11 +298,11 @@ nnoremap y} y}kp
 
 " Unite
 nnoremap <Space>p :Unite -start-insert -no-split file_rec/git<cr>
-nnoremap <Space>f :Unite -complete -no-split file file/new directory/new<cr>
-nnoremap <Space>b :Unite -no-split buffer<cr>
-nnoremap <Space>y :Unite -no-split history/yank<cr>
-nnoremap <Space>o :Unite -no-split outline<cr>
-nnoremap <Space>/ :Unite -no-split grep:.<cr>
+nnoremap <Space>f :Unite -start-insert -no-split file file/new directory/new<cr>
+nnoremap <Space>b :Unite -start-insert -no-split buffer<cr>
+nnoremap <Space>y :Unite -start-insert -no-split history/yank<cr>
+nnoremap <Space>o :Unite -start-insert -no-split outline<cr>
+nnoremap <Space>/ :Unite -start-insert -no-split grep:.<cr>
 
 " Neocomplete
 inoremap <expr><C-g> neocomplete#undo_completion()
