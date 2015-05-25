@@ -43,7 +43,6 @@ NeoBundle 'Shougo/unite-outline'
 NeoBundle 'tacroe/unite-mark'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'kshenoy/vim-signature'
@@ -211,12 +210,6 @@ let g:unite_source_mark_marks =
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-
-" ------------------------------------
-"  vimfiler settings
-" ------------------------------------
-
-let g:vimfiler_as_default_explorer = 1
 
 " ------------------------------------
 "  EasyMotion settings
