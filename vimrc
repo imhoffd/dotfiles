@@ -69,6 +69,8 @@ NeoBundle 'vim-scripts/smarty-syntax'
 NeoBundle 'dwieeb/php-getter-setter.vim'
 " rust
 NeoBundle 'wting/rust.vim'
+" gpg
+NeoBundle 'jamessan/vim-gnupg'
 " misc
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-fugitive'

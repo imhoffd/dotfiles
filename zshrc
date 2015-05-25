@@ -35,6 +35,8 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git tmux symfony2 web-search vi-mode)
 # plugins=(composer)
 
+export GPGKEY=6B4B0C48
+
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR="vim"
