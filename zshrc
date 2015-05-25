@@ -59,6 +59,10 @@ if [[ -d "$HOME/.python" && -z "$VIRTUAL_ENV" ]]; then
     source $HOME/.python/bin/activate
 fi
 
+if [[ -d "$HOME/.nvm" ]]; then
+    source ~/.nvm/nvm.sh
+fi
+
 # shortcuts
 alias    vi=vim
 #alias    ps="ps aux | grep \"^$(id -nu)\""
