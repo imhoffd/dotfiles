@@ -97,79 +97,6 @@ NeoBundle 'vim-scripts/TeTrIs.vim'
 
 call neobundle#end()
 
-" -------------------------------------
-"  General settings
-" -------------------------------------
-
-filetype plugin indent on
-
-set mouse=a
-
-" When searching try to be smart about cases
-set smartcase
-
-" For regular expressions turn magic on
-set magic
-
-" No annoying sound on errors
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
-
-" Make esc faster
-set esckeys
-
-" Folds
-" set foldmethod=indent
-
-set wildignore+=*.db,*.o,*.obj
-set wildignore+=*.swp,*.bak,*.lock
-set wildignore+=*.git,*.svn
-set wildignore+=*DS_Store*
-set wildignore+=**/tmp/**
-set wildignore+=*.png,*.jpg,*.gif
-set wildignore+=*.app,*.dmg,*.pdf,*.so
-
-set completeopt-=preview
-
-" -------------------------------------
-"  Appearance settings
-" -------------------------------------
-
-colorscheme jellybeans
-
-set background=dark
-set t_Co=256
-set hlsearch
-set cursorline
-set listchars=tab:>~,nbsp:_,trail:.
-set list
-set number
-set relativenumber
-set numberwidth=5
-
-" -------------------------------------
-"  File & backup settings
-" -------------------------------------
-
-set nobackup
-set nowb
-set noswapfile
-
-" -------------------------------------
-"  Text settings
-" -------------------------------------
-
-" Use spaces, damn it!
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set nowrap
-set nojoinspaces
-set diffopt+=vertical
-
 " ------------------------------------
 "  molokai settings
 " ------------------------------------
@@ -261,6 +188,79 @@ au BufRead,BufNewFile *.tmpl set filetype=smarty
 au BufRead,BufNewFile *.module set filetype=php
 au BufRead,BufNewFile *.install set filetype=php
 au BufRead,BufNewFile *.schema set filetype=javascript
+
+" -------------------------------------
+"  General settings
+" -------------------------------------
+
+filetype plugin indent on
+
+set mouse=a
+
+" When searching try to be smart about cases
+set smartcase
+
+" For regular expressions turn magic on
+set magic
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+" Make esc faster
+set esckeys
+
+" Folds
+" set foldmethod=indent
+
+set wildignore+=*.db,*.o,*.obj
+set wildignore+=*.swp,*.bak,*.lock
+set wildignore+=*.git,*.svn
+set wildignore+=*DS_Store*
+set wildignore+=**/tmp/**
+set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=*.app,*.dmg,*.pdf,*.so
+
+set completeopt-=preview
+
+" -------------------------------------
+"  Appearance settings
+" -------------------------------------
+
+set background=dark
+set t_Co=256
+set hlsearch
+set cursorline
+set listchars=tab:>~,nbsp:_,trail:.
+set list
+set number
+set relativenumber
+set numberwidth=5
+
+colorscheme jellybeans
+
+" -------------------------------------
+"  File & backup settings
+" -------------------------------------
+
+set nobackup
+set nowb
+set noswapfile
+
+" -------------------------------------
+"  Text settings
+" -------------------------------------
+
+" Use spaces, damn it!
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set nowrap
+set nojoinspaces
+set diffopt+=vertical
 
 " -------------------------------------
 "  Keyboard shortcuts
