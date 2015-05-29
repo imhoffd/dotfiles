@@ -115,12 +115,15 @@ let g:airline#extensions#tabline#enabled = 1
 " ------------------------------------
 
 call unite#custom#source('file_rec, file_rec/async, file_rec/git', 'matchers', ['converter_relative_word', 'matcher_fuzzy'])
-call unite#custom#source('file_rec, file_rec/async, file_rec/git', 'ignore_pattern', 'java')
 call unite#filters#sorter_default#use(['sorter_rank'])
 call unite#custom#profile('default', 'context.smartcase', 1)
 call unite#custom#profile('default', 'context.ignorecase', 1)
 let g:unite_prompt = '» '
 let g:unite_source_history_yank_enable = 1
+
+if executable('ag')
+    let g:unite_source_rec_async_command = 'ag --nocolor --nogroup --hidden -g ""'
+endif
 
 " ------------------------------------
 "  Unite mark settings
@@ -294,7 +297,7 @@ nnoremap y{ y{}kp
 nnoremap y} y}kp
 
 " Unite
-nnoremap <Space>p :Unite -start-insert -no-split -no-resize file_rec/git<cr>
+nnoremap <Space>p :Unite -start-insert -no-split -no-resize file_rec/async<cr>
 nnoremap <Space>f :Unite -start-insert -no-split -no-resize file file/new directory/new<cr>
 nnoremap <Space>b :Unite -start-insert -no-split -no-resize buffer<cr>
 nnoremap <Space>y :Unite -start-insert -no-split -no-resize history/yank<cr>
