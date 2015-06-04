@@ -66,6 +66,8 @@ NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'evidens/vim-twig'
 NeoBundle 'vim-scripts/smarty-syntax'
 NeoBundle 'dwieeb/php-getter-setter.vim'
+" python
+NeoBundle 'hynek/vim-python-pep8-indent'
 " rust
 NeoBundle 'wting/rust.vim'
 " gpg
