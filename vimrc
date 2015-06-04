@@ -100,6 +100,14 @@ NeoBundle 'vim-scripts/TeTrIs.vim'
 call neobundle#end()
 
 " ------------------------------------
+"  syntastic settings
+" ------------------------------------
+
+if executable('python3')
+    let g:syntastic_python_python_exec = 'python3'
+endif
+
+" ------------------------------------
 "  molokai settings
 " ------------------------------------
 
