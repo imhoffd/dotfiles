@@ -182,7 +182,6 @@ let g:tmuxline_separators = {
 " -------------------------------------
 
 autocmd BufWritePost ~/.vimrc source ~/.vimrc
-autocmd BufReadPre *.js setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 autocmd BufReadPre *.css setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 autocmd BufReadPre *.scss setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 autocmd BufReadPre *.scala setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
