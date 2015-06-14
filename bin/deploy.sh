@@ -7,8 +7,10 @@ END_COLOR="\033[0m"
 
 if [[ $1 ]]; then
     user=$1
+    root_ran=true
 else
     user=$USER
+    root_ran=false
 fi
 
 DIR="$( dirname "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" )"
@@ -24,6 +26,8 @@ attempt () {
     fi
 }
 
+cd $DIR
+
 if [[ $1 ]]; then
     echo "Username specified - skipping initial setup."
 else
@@ -37,7 +41,6 @@ else
     echo "Updating dotfiles and dependencies..."
 
     # Update dotfiles submodules
-    cd $DIR
     git submodule update --init --recursive
 
     echo -e $GREEN"   done!"$END_COLOR
@@ -49,11 +52,16 @@ if [[ -z $ZSH_NAME ]]; then
     echo -e $GREEN"   done!"$END_COLOR
 fi
 
-cd $DIR
-
 echo "Symlinking configuration files..."
 
+personal_files="gitconfig"
+
 for f in *; do
+    if [[ $root_ran && $personal_files =~ $f ]]; then
+        echo "Skipping personal files ($personal_files)..."
+        continue
+    fi
+
     if [[ ! "bin override README.md" =~ $f &&
           ! -e "$(cat .gitignore | grep '^'$f'$')" &&
           ! -L $USER_HOME/.$f ]]; then
