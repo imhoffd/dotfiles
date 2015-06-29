@@ -44,8 +44,8 @@ NeoBundle 'tacroe/unite-mark'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'kshenoy/vim-signature'
+NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-unimpaired'
@@ -157,13 +157,6 @@ let g:neocomplete#enable_smart_case = 1
 
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_do_mapping = 0
-
-" ------------------------------------
-"  tcomment settings
-" ------------------------------------
-
-call tcomment#SetOption("count", 1)
-let g:tcomment#blank_lines = 0
 
 " ------------------------------------
 "  tmuxline settings
