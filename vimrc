@@ -62,6 +62,8 @@ NeoBundle 'wellle/targets.vim'
 NeoBundle 'jnwhiteh/vim-golang'
 " scala
 NeoBundle 'derekwyatt/vim-scala'
+" groovy
+NeoBundle 'vim-scripts/groovy.vim'
 " php
 NeoBundle 'evidens/vim-twig'
 NeoBundle 'vim-scripts/smarty-syntax'
@@ -183,6 +185,7 @@ autocmd BufReadPre *.css setlocal tabstop=2 | setlocal softtabstop=2 | setlocal 
 autocmd BufReadPre *.scss setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 autocmd BufReadPre *.scala setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 autocmd BufReadPre *.coffee setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
+autocmd BufReadPre *.gradle setlocal syntax=groovy
 autocmd BufReadPre *.rst setlocal textwidth=80
 autocmd BufReadPre *.php setlocal nocursorline
 autocmd BufReadPost *
