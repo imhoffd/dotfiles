@@ -68,6 +68,8 @@ alias    vi=vim
 #alias    ps="ps aux | grep \"^$(id -nu)\""
 alias    ll="ls -alh"
 alias    l="ll"
+alias    ....="cd ../../.."
+alias    .....="cd ../../../.."
 alias    df="df -h"
 alias    du="du -h"
 alias    tmux="TERM=screen-256color-bce tmux"
