@@ -91,14 +91,6 @@ NeoBundle 'dwieeb/molokai'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'edkolev/tmuxline.vim'
 
-" -------------------------------------
-"  Misc. Awesome Plugins
-" -------------------------------------
-
-NeoBundle 'supermomonga/jazzradio.vim'
-NeoBundle 'mattn/flappyvird-vim'
-NeoBundle 'vim-scripts/TeTrIs.vim'
-
 call neobundle#end()
 
 " ------------------------------------
