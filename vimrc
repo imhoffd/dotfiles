@@ -281,11 +281,6 @@ inoremap jk <Esc>
 map Q <Nop>
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-nnoremap <Left> :echoe "Use h"<cr>
-nnoremap <Right> :echoe "Use l"<cr>
-nnoremap <Up> :echoe "Use k"<cr>
-nnoremap <Down> :echoe "Use j"<cr>
-
 " tabs
 nnoremap gwN :tabnew<cr>
 nnoremap gwC :tabclose<cr>
