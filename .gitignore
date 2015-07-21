@@ -2,4 +2,6 @@ vim/.netrwhist
 vim/bundle
 vim/sessions
 tmux/plugins
+tmux/resurrect
 .DS_Store
+Session.vim
