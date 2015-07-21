@@ -54,6 +54,7 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'wellle/targets.vim'
 NeoBundle 'tpope/vim-obsession'
+NeoBundle 'michaeljsmith/vim-indent-object'
 
 " -------------------------------------
 "  Integration Plugins
