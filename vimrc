@@ -76,13 +76,15 @@ NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'wting/rust.vim'
 " gpg
 NeoBundle 'jamessan/vim-gnupg'
-" misc
-NeoBundle 'scrooloose/syntastic'
+" git
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
 " coffee
 NeoBundle 'kchmck/vim-coffee-script'
 " scss
 NeoBundle 'cakebaker/scss-syntax.vim'
+" misc
+NeoBundle 'scrooloose/syntastic'
 
 " -------------------------------------
 "  Appearance & Theme Plugins
@@ -94,6 +96,12 @@ NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'edkolev/tmuxline.vim'
 
 call neobundle#end()
+
+" ------------------------------------
+"  gitgutter settings
+" ------------------------------------
+
+let g:gitgutter_realtime = 1
 
 " ------------------------------------
 "  syntastic settings
