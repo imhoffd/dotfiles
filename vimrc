@@ -93,6 +93,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'dwieeb/molokai'
 NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'romainl/Apprentice'
 NeoBundle 'edkolev/tmuxline.vim'
 
 call neobundle#end()
