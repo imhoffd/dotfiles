@@ -174,13 +174,6 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 
 " ------------------------------------
-"  EasyMotion settings
-" ------------------------------------
-
-let g:EasyMotion_smartcase = 1
-let g:EasyMotion_do_mapping = 0
-
-" ------------------------------------
 "  tmuxline settings
 " ------------------------------------
 
