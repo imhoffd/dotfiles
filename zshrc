@@ -55,10 +55,6 @@ PATH=$GOPATH/bin:$PATH
 
 VIRTUAL_ENV_DISABLE_PROMPT='1'
 
-if [[ -d "$HOME/.python" && -z "$VIRTUAL_ENV" ]]; then
-    source $HOME/.python/bin/activate
-fi
-
 if [[ -d "$HOME/.nvm" ]]; then
     source ~/.nvm/nvm.sh
 fi
