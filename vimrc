@@ -73,6 +73,7 @@ NeoBundle 'dwieeb/php-getter-setter.vim'
 " python
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'jmcantrell/vim-virtualenv'
+NeoBundle 'davidhalter/jedi-vim'
 " rust
 NeoBundle 'wting/rust.vim'
 " gpg
@@ -98,6 +99,15 @@ NeoBundle 'romainl/Apprentice'
 NeoBundle 'edkolev/tmuxline.vim'
 
 call neobundle#end()
+
+" ------------------------------------
+"  jedi settings
+" ------------------------------------
+
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#show_call_signatures = 2
+let g:jedi#popup_select_first = 0
 
 " ------------------------------------
 "  vim-virtualenv settings
