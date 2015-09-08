@@ -86,4 +86,5 @@ function source_env() {
     fi
 }
 
+source_env
 chpwd_functions=(${chpwd_functions[@]} "source_env")
