@@ -72,6 +72,7 @@ NeoBundle 'vim-scripts/smarty-syntax'
 NeoBundle 'dwieeb/php-getter-setter.vim'
 " python
 NeoBundle 'hynek/vim-python-pep8-indent'
+NeoBundle 'jmcantrell/vim-virtualenv'
 " rust
 NeoBundle 'wting/rust.vim'
 " gpg
@@ -99,6 +100,18 @@ NeoBundle 'edkolev/tmuxline.vim'
 call neobundle#end()
 
 " ------------------------------------
+"  vim-virtualenv settings
+" ------------------------------------
+
+let g:virtualenv_directory = '.'
+let g:virtualenv_auto_activate = 0
+
+" I'll do the auto-activation for my workflow, ty!
+if filereadable(expand("./venv/bin/activate"))
+    call virtualenv#activate("venv")
+endif
+
+" ------------------------------------
 "  gitgutter settings
 " ------------------------------------
 
@@ -124,6 +137,7 @@ let g:molokai_original = 1
 
 let g:airline_theme = 'jellybeans'
 let g:airline#extensions#tabline#enabled = 1
+" let g:airline_section_b = '%{virtualenv#statusline()}'
 
 " ------------------------------------
 "  Unite settings
