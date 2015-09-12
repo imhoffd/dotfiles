@@ -48,7 +48,6 @@ NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-unimpaired'
-" NeoBundle 'severin-lemaignan/vim-minimap' " This one is one to watch -- Sublime-like minimap
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'unblevable/quick-scope'
