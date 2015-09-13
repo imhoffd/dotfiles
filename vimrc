@@ -54,6 +54,7 @@ NeoBundle 'unblevable/quick-scope'
 NeoBundle 'wellle/targets.vim'
 NeoBundle 'tpope/vim-obsession'
 NeoBundle 'michaeljsmith/vim-indent-object'
+NeoBundle 'dwieeb/vim-matchit'
 
 " -------------------------------------
 "  Integration Plugins
