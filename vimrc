@@ -231,6 +231,9 @@ set smartcase
 " For regular expressions turn magic on
 set magic
 
+" Let me hide a buffer with changes
+set hidden
+
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
