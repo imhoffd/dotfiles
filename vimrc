@@ -124,6 +124,8 @@ if executable('python3')
     let g:syntastic_python_python_exec = 'python3'
 endif
 
+let g:syntastic_html_tidy_ignore_errors = [ 'proprietary attribute' ]
+
 " ------------------------------------
 "  molokai settings
 " ------------------------------------
