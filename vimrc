@@ -61,7 +61,7 @@ NeoBundle 'dwieeb/vim-matchit'
 " -------------------------------------
 
 " go
-NeoBundle 'jnwhiteh/vim-golang'
+NeoBundle 'fatih/vim-go'
 " scala
 NeoBundle 'derekwyatt/vim-scala'
 " groovy
