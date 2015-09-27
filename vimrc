@@ -100,6 +100,13 @@ NeoBundle 'edkolev/tmuxline.vim'
 call neobundle#end()
 
 " ------------------------------------
+"  vim-go settings
+" ------------------------------------
+
+" format with goimports instead of gofmt
+let g:go_fmt_command = "goimports"
+
+" ------------------------------------
 "  vim-virtualenv settings
 " ------------------------------------
 
