@@ -51,7 +51,7 @@ export GOPATH=$HOME/scripts/go
 
 PATH=$HOME/bin:$PATH
 PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH
-PATH=$GOROOT/bin:$PATH
+PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 VIRTUAL_ENV_DISABLE_PROMPT='1'
 
