@@ -38,7 +38,6 @@ NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': g:make}}
 " -------------------------------------
 
 NeoBundle 'Shougo/unite.vim'
-" NeoBundle 'dwieeb/unite.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'tacroe/unite-mark'
 NeoBundle 'ujihisa/unite-colorscheme'
@@ -49,7 +48,6 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'nathanaelkane/vim-indent-guides'
-" NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'unblevable/quick-scope'
 NeoBundle 'wellle/targets.vim'
 NeoBundle 'tpope/vim-obsession'
@@ -68,7 +66,6 @@ NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'vim-scripts/groovy.vim'
 " php
 NeoBundle 'evidens/vim-twig'
-NeoBundle 'vim-scripts/smarty-syntax'
 NeoBundle 'dwieeb/php-getter-setter.vim'
 " python
 NeoBundle 'hynek/vim-python-pep8-indent'
@@ -220,7 +217,6 @@ autocmd BufReadPost *
 " -------------------------------------
 
 au BufRead,BufNewFile *.wsgi set filetype=python
-au BufRead,BufNewFile *.tmpl set filetype=smarty
 au BufRead,BufNewFile *.module set filetype=php
 au BufRead,BufNewFile *.install set filetype=php
 au BufRead,BufNewFile *.schema set filetype=javascript
@@ -305,11 +301,16 @@ set diffopt+=vertical
 "  Keyboard shortcuts
 " -------------------------------------
 
-let mapleader=","
+let mapleader="\<Space>"
 
 inoremap jk <Esc>
 
+" Ex mode: no ty
 map Q <Nop>
+
+" Disable accidental macro recording when I spaz out on the q key
+map qq <Nop>
+
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " tabs
@@ -321,25 +322,18 @@ nnoremap gwT :wincmd T<cr>
 vnoremap < <gv
 vnoremap > >gv
 
-" It is strange this particular movement happens AND yanks
-nnoremap y{ y{}kp
-nnoremap y} y}kp
-
 " Unite
-nnoremap <Space>p :Unite -start-insert -no-split -no-resize file_rec/async<cr>
-nnoremap <Space>f :Unite -start-insert -no-split -no-resize file file/new directory/new<cr>
-nnoremap <Space>b :Unite -start-insert -no-split -no-resize buffer<cr>
-nnoremap <Space>y :Unite -start-insert -no-split -no-resize history/yank<cr>
-nnoremap <Space>o :Unite -start-insert -no-split -no-resize outline<cr>
-nnoremap <Space>/ :Unite -start-insert -no-split -no-resize grep:.<cr>
+nnoremap <Leader>p :Unite -start-insert -no-split -no-resize file_rec/async<cr>
+nnoremap <Leader>f :Unite -start-insert -no-split -no-resize file file/new directory/new<cr>
+nnoremap <Leader>b :Unite -start-insert -no-split -no-resize buffer<cr>
+nnoremap <Leader>y :Unite -start-insert -no-split -no-resize history/yank<cr>
+nnoremap <Leader>o :Unite -start-insert -no-split -no-resize outline<cr>
+nnoremap <Leader>/ :Unite -start-insert -no-split -no-resize grep:.<cr>
 
 " Neocomplete
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" EasyMotion
-nmap s <Plug>(easymotion-s)
 
 " -------------------------------------
 "  Source a .vimrc.local if it exists
