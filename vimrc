@@ -133,7 +133,10 @@ if executable('eslint')
     let g:syntastic_javascript_checkers = [ 'eslint' ]
 endif
 
-let g:syntastic_html_tidy_ignore_errors = [ 'proprietary attribute' ]
+let g:syntastic_html_tidy_ignore_errors = [
+    \ '<ion-',
+    \ 'discarding unexpected </ion-',
+    \ 'proprietary attribute "ng-"' ]
 
 " ------------------------------------
 "  molokai settings
