@@ -71,7 +71,7 @@ NeoBundle 'dwieeb/php-getter-setter.vim'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'jmcantrell/vim-virtualenv'
 " rust
-NeoBundle 'wting/rust.vim'
+NeoBundle 'rust-lang/rust.vim'
 " gpg
 NeoBundle 'jamessan/vim-gnupg'
 " git
