@@ -74,17 +74,3 @@ alias    tmuxl="tmux list-sessions"
 function vman() { man "$*" | vi -; }
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-
-# function source_env() {
-#     if [[ -f .env ]]; then
-#         echo -n ".env found. Source? y/n: "
-#         read ANSWER
-
-#         if [[ $ANSWER == "y" ]]; then
-#             source .env
-#         fi
-#     fi
-# }
-
-# source_env
-# chpwd_functions=(${chpwd_functions[@]} "source_env")
