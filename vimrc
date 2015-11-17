@@ -104,6 +104,12 @@ call neobundle#end()
 let g:go_fmt_command = "goimports"
 
 " ------------------------------------
+"  rust.vim settings
+" ------------------------------------
+
+let g:rustfmt_autosave = 1
+
+" ------------------------------------
 "  vim-virtualenv settings
 " ------------------------------------
 
