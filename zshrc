@@ -49,9 +49,17 @@ bindkey -M viins 'jk' vi-cmd-mode
 export GOROOT=$HOME/src/go
 export GOPATH=$HOME/scripts/go
 
-PATH=$HOME/bin:$PATH
-PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH
-PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+if [[ -d "$HOME/bin" ]]; then
+    PATH=$HOME/bin:$PATH
+fi
+
+if [[ -d "$HOME/.rvm" ]]; then
+    PATH=$HOME/.rvm/bin:$PATH
+fi
+
+if [[ -d "$GOPATH" ]]; then
+    PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+fi
 
 VIRTUAL_ENV_DISABLE_PROMPT='1'
 
