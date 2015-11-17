@@ -51,8 +51,9 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'unblevable/quick-scope'
 NeoBundle 'wellle/targets.vim'
 NeoBundle 'tpope/vim-obsession'
-NeoBundle 'michaeljsmith/vim-indent-object'
 NeoBundle 'dwieeb/vim-matchit'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'kana/vim-textobj-indent'
 
 " -------------------------------------
 "  Integration Plugins
@@ -70,6 +71,7 @@ NeoBundle 'dwieeb/php-getter-setter.vim'
 " python
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'jmcantrell/vim-virtualenv'
+NeoBundle 'bps/vim-textobj-python'
 " rust
 NeoBundle 'rust-lang/rust.vim'
 " gpg
