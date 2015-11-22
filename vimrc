@@ -350,6 +350,10 @@ inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
+" Commands
+command! W w
+command! Q q
+
 " -------------------------------------
 "  Source a .vimrc.local if it exists
 " -------------------------------------
