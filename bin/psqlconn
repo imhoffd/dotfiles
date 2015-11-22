@@ -4,6 +4,13 @@ import time
 import argparse
 import subprocess
 
+try:
+    subprocess.call(['psql', '--help'], stdout=subprocess.DEVNULL)
+except FileNotFoundError:
+    print("`psql` command does not exist! PostgreSQL must be installed to "
+          "use psqlconn.")
+    exit(1)
+
 parser = argparse.ArgumentParser(
     description="Parse a PostgreSQL connection string and use `psql` to "
                 "connect. All other arguments are passed directly to `psql`.")
