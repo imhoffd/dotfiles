@@ -144,7 +144,9 @@ endif
 let g:syntastic_html_tidy_ignore_errors = [
     \ '<ion-',
     \ 'discarding unexpected </ion-',
-    \ 'proprietary attribute "ng-"' ]
+    \ 'proprietary attribute "ng-',
+    \ 'proprietary attribute "on',
+    \ 'trimming empty <i>' ]
 
 " ------------------------------------
 "  molokai settings
