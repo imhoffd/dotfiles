@@ -250,7 +250,7 @@ set mouse=a
 set smartcase
 
 " For regular expressions turn magic on
-set magic
+set magic " yer a wizard harry
 
 " Let me hide a buffer with changes
 set hidden
