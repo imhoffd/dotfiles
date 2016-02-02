@@ -378,6 +378,6 @@ statusbar = {
   };
 };
 settings = {
-  core = { real_name = "Daniel Imhoff"; user_name = "dan"; nick = "dan"; };
+  core = { real_name = "Daniel Imhoff"; user_name = "dwieeb"; nick = "dwieeb"; };
   "fe-text" = { actlist_sort = "refnum"; };
 };
