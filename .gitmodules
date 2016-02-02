@@ -7,3 +7,6 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
+[submodule "irssi/weed"]
+	path = irssi/weed
+	url = https://github.com/ronilaukkarinen/weed.git

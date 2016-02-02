@@ -299,8 +299,8 @@ statusbar = {
     awl_0 = {
       items = {
         barstart = { priority = "100"; };
-        awl_0 = { };
         usercount = { };
+        awl_0 = { };
         barend = { priority = "100"; alignment = "right"; };
       };
     };
@@ -308,9 +308,9 @@ statusbar = {
 };
 settings = {
   core = {
-    real_name = "Daniel Imhoff";
-    user_name = "dwieeb";
-    nick = "dwieeb";
+    real_name = "yourname";
+    user_name = "yourname";
+    nick = "yourname";
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = { theme = "weed"; };
