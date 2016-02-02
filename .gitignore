@@ -3,5 +3,6 @@ vim/bundle
 vim/sessions
 tmux/plugins
 tmux/resurrect
+irssi/config.autosave
 .DS_Store
 Session.vim
