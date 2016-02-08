@@ -345,7 +345,7 @@ nnoremap <Leader>f :Unite -start-insert -no-split -no-resize file file/new direc
 nnoremap <Leader>b :Unite -start-insert -no-split -no-resize buffer<cr>
 nnoremap <Leader>y :Unite -start-insert -no-split -no-resize history/yank<cr>
 nnoremap <Leader>o :Unite -start-insert -no-split -no-resize outline<cr>
-nnoremap <Leader>/ :Unite -start-insert -no-split -no-resize grep:.<cr>
+nnoremap <Leader>/ :Unite -start-insert -no-split -no-resize -no-empty grep:.<cr>
 
 " Neocomplete
 inoremap <expr><C-g> neocomplete#undo_completion()
