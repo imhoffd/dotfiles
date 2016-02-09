@@ -93,7 +93,6 @@ NeoBundle 'scrooloose/syntastic'
 " -------------------------------------
 
 NeoBundle 'bling/vim-airline'
-NeoBundle 'dwieeb/molokai'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'romainl/Apprentice'
 NeoBundle 'edkolev/tmuxline.vim'
@@ -149,12 +148,6 @@ let g:syntastic_html_tidy_ignore_errors = [
     \ 'proprietary attribute "ng-',
     \ 'proprietary attribute "on',
     \ 'trimming empty <i>' ]
-
-" ------------------------------------
-"  molokai settings
-" ------------------------------------
-
-let g:molokai_original = 1
 
 " ------------------------------------
 "  airline settings
