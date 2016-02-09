@@ -92,7 +92,8 @@ NeoBundle 'scrooloose/syntastic'
 "  Appearance & Theme Plugins
 " -------------------------------------
 
-NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'romainl/Apprentice'
 NeoBundle 'edkolev/tmuxline.vim'
@@ -153,9 +154,9 @@ let g:syntastic_html_tidy_ignore_errors = [
 "  airline settings
 " ------------------------------------
 
-let g:airline_theme = 'jellybeans'
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_section_b = '%{virtualenv#statusline()}'
+let g:airline#extensions#tmuxline#enabled = 0
+let g:airline_theme = 'jellybeans'
 
 " ------------------------------------
 "  Unite settings
@@ -197,6 +198,8 @@ let g:neocomplete#enable_smart_case = 1
 "  tmuxline settings
 " ------------------------------------
 
+" :Tmuxline airline to set manual colors
+" :TmuxlineSnapshot! tmuxline.conf to save colors
 let g:tmuxline_preset = 'nightly_fox'
 let g:tmuxline_separators = {
     \ 'left' : '',
