@@ -39,6 +39,7 @@ NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': g:make}}
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
+NeoBundle 'Shougo/neoyank.vim'
 NeoBundle 'tacroe/unite-mark'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'Shougo/neocomplete.vim'
