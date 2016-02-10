@@ -2,7 +2,7 @@
 
 Simply clone the repository and run the deploy script.
 
-    git clone --recursive https://github.com/dwieeb/dotfiles.git ~/.dotfiles
+    git clone --recursive https://gitlab.com/dwieeb/dotfiles.git ~/.dotfiles
     ~/.dotfiles/bin/deploy.sh
 
 #### Notes for Mac
