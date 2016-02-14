@@ -156,6 +156,8 @@ let g:syntastic_html_tidy_ignore_errors = [
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tmuxline#enabled = 0
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#hunks#enabled = 0
 let g:airline_theme = 'jellybeans'
 
 " ------------------------------------
