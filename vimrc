@@ -290,6 +290,7 @@ set list
 set number
 set relativenumber
 set numberwidth=5
+set showcmd
 
 colorscheme jellybeans
 
