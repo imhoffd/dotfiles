@@ -145,7 +145,9 @@ endif
 
 let g:syntastic_html_tidy_ignore_errors = [
     \ '<ion-',
+    \ '<ui-',
     \ 'discarding unexpected </ion-',
+    \ 'discarding unexpected </ui-',
     \ 'proprietary attribute "ng-',
     \ 'proprietary attribute "on',
     \ 'trimming empty <i>' ]
