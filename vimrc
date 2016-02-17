@@ -83,6 +83,8 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 " coffee
 NeoBundle 'kchmck/vim-coffee-script'
+" typescript
+NeoBundle 'leafgarland/typescript-vim'
 " scss
 NeoBundle 'cakebaker/scss-syntax.vim'
 " misc
