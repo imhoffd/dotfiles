@@ -73,7 +73,7 @@ NeoBundle 'dwieeb/php-getter-setter.vim'
 " python
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'jmcantrell/vim-virtualenv'
-NeoBundle 'bps/vim-textobj-python'
+NeoBundle 'tweekmonster/braceless.vim'
 " rust
 NeoBundle 'rust-lang/rust.vim'
 " gpg
@@ -218,6 +218,7 @@ let g:tmuxline_separators = {
 "  autocommands
 " -------------------------------------
 
+autocmd FileType python BracelessEnable +indent
 autocmd BufWritePost ~/.vimrc source ~/.vimrc
 autocmd BufReadPre *.js setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 autocmd BufReadPre *.go setlocal tabstop=4 | setlocal softtabstop=4 | setlocal shiftwidth=4 | setlocal noexpandtab
