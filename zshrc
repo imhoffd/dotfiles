@@ -78,9 +78,6 @@ alias    ....="cd ../../.."
 alias    .....="cd ../../../.."
 alias    df="df -h"
 alias    du="du -h"
-alias    tmux="TERM=screen-256color-bce tmux"
-alias    tmuxa="tmux attach-session"
-alias    tmuxl="tmux list-sessions"
 function vman() { man "$*" | vi -; }
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
