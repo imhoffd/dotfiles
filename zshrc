@@ -37,8 +37,6 @@ plugins=(git tmux symfony2 web-search vi-mode heroku golang gulp pass)
 
 export GPGKEY=6B4B0C48
 
-source $ZSH/oh-my-zsh.sh
-
 export EDITOR="vim"
 export VISUAL="vim"
 
@@ -86,3 +84,5 @@ alias    tmuxl="tmux list-sessions"
 function vman() { man "$*" | vi -; }
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+source $ZSH/oh-my-zsh.sh
