@@ -8,10 +8,6 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="minimal"
 DEFAULT_USER="dwieeb"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -28,12 +24,11 @@ DISABLE_AUTO_UPDATE="true"
 # COMPLETION_WAITING_DOTS="true"
 
 # ZSH_TMUX_AUTOSTART="true"
+ZSH_TMUX_AUTOCONNECT="false"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git tmux symfony2 web-search vi-mode heroku golang gulp pass)
-# plugins=(composer)
 
 export GPGKEY=6B4B0C48
 
