@@ -153,6 +153,9 @@ let g:syntastic_html_tidy_ignore_errors = [
     \ 'proprietary attribute "ng-',
     \ 'proprietary attribute "on',
     \ 'trimming empty <i>' ]
+let g:syntastic_quiet_messages = {
+    \ "type": "style",
+    \ "regex": "main redeclared in this block"}
 
 " ------------------------------------
 "  airline settings
