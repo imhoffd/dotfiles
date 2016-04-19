@@ -75,6 +75,16 @@ alias    df="df -h"
 alias    du="du -h"
 function vman() { man "$*" | vi -; }
 
+function s() {
+    if [[ -d "$PWD/venv" ]]; then
+        source "$PWD/venv/bin/activate"
+    fi
+
+    if [[ -f "$PWD/.env" ]]; then
+        source "$PWD/.env"
+    fi
+}
+
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 source $ZSH/oh-my-zsh.sh
