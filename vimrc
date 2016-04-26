@@ -91,7 +91,6 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'romainl/Apprentice'
 NeoBundle 'edkolev/tmuxline.vim'
 
 call neobundle#end()
@@ -293,6 +292,7 @@ set number
 set relativenumber
 set numberwidth=5
 set showcmd
+set lazyredraw
 
 colorscheme jellybeans
 
