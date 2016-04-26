@@ -39,7 +39,6 @@ NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': g:make}}
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/neoyank.vim'
 NeoBundle 'tacroe/unite-mark'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'Shougo/neocomplete.vim'
@@ -67,9 +66,6 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'derekwyatt/vim-scala'
 " groovy
 NeoBundle 'vim-scripts/groovy.vim'
-" php
-NeoBundle 'evidens/vim-twig'
-NeoBundle 'dwieeb/php-getter-setter.vim'
 " python
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'jmcantrell/vim-virtualenv'
@@ -81,8 +77,6 @@ NeoBundle 'jamessan/vim-gnupg'
 " git
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
-" coffee
-NeoBundle 'kchmck/vim-coffee-script'
 " typescript
 NeoBundle 'leafgarland/typescript-vim'
 " scss
