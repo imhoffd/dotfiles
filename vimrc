@@ -77,8 +77,10 @@ NeoBundle 'jamessan/vim-gnupg'
 " git
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
+" es6
+NeoBundle 'othree/yajs.vim'
 " typescript
-NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'HerringtonDarkholme/yats.vim'
 " scss
 NeoBundle 'cakebaker/scss-syntax.vim'
 " misc
