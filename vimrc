@@ -219,11 +219,11 @@ let g:tmuxline_separators = {
 autocmd FileType python BracelessEnable +indent
 autocmd BufWritePost ~/.vimrc source ~/.vimrc
 autocmd BufReadPre *.js setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
+autocmd BufReadPre *.ts setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 autocmd BufReadPre *.go setlocal tabstop=4 | setlocal softtabstop=4 | setlocal shiftwidth=4 | setlocal noexpandtab
 autocmd BufReadPre *.css setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 autocmd BufReadPre *.scss setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 autocmd BufReadPre *.scala setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
-autocmd BufReadPre *.coffee setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 autocmd BufReadPre *.gradle setlocal syntax=groovy
 autocmd BufReadPre *.rst setlocal textwidth=80
 autocmd BufReadPre *.php setlocal nocursorline
