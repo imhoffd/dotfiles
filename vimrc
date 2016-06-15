@@ -9,9 +9,8 @@
 "
 " -------------------------------------
 
-" </3 vi
 if has('vim_starting')
-    set nocompatible
+    set nocompatible " </3 vi
     filetype off
 
     set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -41,7 +40,11 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'tacroe/unite-mark'
 NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'Shougo/neocomplete.vim'
+if has("nvim")
+    NeoBundle 'Shougo/deoplete.nvim'
+else
+    NeoBundle 'Shougo/neocomplete.vim'
+endif
 NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-surround'
@@ -191,12 +194,17 @@ let g:unite_source_mark_marks =
             \ . "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 " ------------------------------------
-"  neocomplete settings
+"  neocomplete/deoplete settings
 " ------------------------------------
 
 let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
+
+if has("nvim")
+    let g:deoplete#enable_at_startup = 1
+else
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_smart_case = 1
+endif
 
 " ------------------------------------
 "  tmuxline settings

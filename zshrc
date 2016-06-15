@@ -65,8 +65,12 @@ if [[ -d "$HOME/.nvm" ]]; then
 fi
 
 # shortcuts
-alias    vi=vim
-#alias    ps="ps aux | grep \"^$(id -nu)\""
+if [[ -x "$(which nvim)" ]]; then
+    alias vi=nvim
+else
+    alias vi=vim
+fi
+
 alias    ll="ls -alh"
 alias    l="ll"
 alias    ....="cd ../../.."
