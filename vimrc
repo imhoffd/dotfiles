@@ -302,7 +302,9 @@ set number
 set relativenumber
 set numberwidth=5
 set showcmd
-set lazyredraw
+if !has("nvim")
+    set lazyredraw
+end
 
 colorscheme jellybeans
 
