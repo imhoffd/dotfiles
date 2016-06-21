@@ -83,7 +83,7 @@ NeoBundle 'airblade/vim-gitgutter'
 " es6
 NeoBundle 'othree/yajs.vim'
 " typescript
-NeoBundle 'HerringtonDarkholme/yats.vim'
+NeoBundle 'leafgarland/typescript-vim'
 " scss
 NeoBundle 'cakebaker/scss-syntax.vim'
 " misc
