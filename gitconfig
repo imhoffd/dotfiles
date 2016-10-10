@@ -1,6 +1,7 @@
 [user]
   name = Daniel Imhoff
   email = dwieeb@gmail.com
+  signingkey = 661327B36B4B0C48
 [github]
   user = dwieeb
 [credential]
