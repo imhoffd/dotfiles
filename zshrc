@@ -77,6 +77,7 @@ alias    ....="cd ../../.."
 alias    .....="cd ../../../.."
 alias    df="df -h"
 alias    du="du -h"
+alias    nr="npm run --silent"
 function vman() { man "$*" | vi -; }
 
 function s() {
