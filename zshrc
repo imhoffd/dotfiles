@@ -35,6 +35,25 @@ export GPGKEY=6B4B0C48
 export EDITOR="vim"
 export VISUAL="vim"
 
+up-line-or-local-history() {
+    zle set-local-history 1
+    zle up-line-or-history
+    zle set-local-history 0
+}
+
+down-line-or-local-history() {
+    zle set-local-history 1
+    zle down-line-or-history
+    zle set-local-history 0
+}
+
+# bind to whatever keys you want for local-hist movement
+bindkey '^p' up-line-or-local-history
+bindkey '^n' down-line-or-local-history
+
+zle -N up-line-or-local-history
+zle -N down-line-or-local-history
+
 umask 002
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey -M viins 'jk' vi-cmd-mode
