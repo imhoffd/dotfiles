@@ -143,8 +143,6 @@ if executable('eslint')
     let g:syntastic_javascript_checkers = [ 'eslint' ]
 endif
 
-let g:syntastic_typescript_checkers=[] " can't use until typescript 2
-
 let g:syntastic_html_tidy_ignore_errors = [
     \ '<ion-',
     \ '<ui-',
