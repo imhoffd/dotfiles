@@ -176,15 +176,6 @@ call unite#custom#profile('default', 'context.ignorecase', 1)
 let g:unite_prompt = '» '
 let g:unite_source_history_yank_enable = 1
 
-if executable('ag')
-    let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
-    let g:unite_source_grep_command = 'ag'
-    let g:unite_source_grep_default_opts =
-        \ '-S --vimgrep --hidden --ignore ' .
-        \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
-    let g:unite_source_grep_recursive_opt = ''
-endif
-
 " ------------------------------------
 "  Unite mark settings
 " ------------------------------------
@@ -355,12 +346,12 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Unite
-nnoremap <Leader>p :Unite -start-insert -no-split -no-resize file_rec/async<cr>
+nnoremap <Leader>p :Unite -start-insert -no-split -no-resize file_rec/git<cr>
 nnoremap <Leader>f :Unite -start-insert -no-split -no-resize file file/new directory/new<cr>
 nnoremap <Leader>b :Unite -start-insert -no-split -no-resize buffer<cr>
 nnoremap <Leader>y :Unite -start-insert -no-split -no-resize history/yank<cr>
 nnoremap <Leader>o :Unite -start-insert -no-split -no-resize outline<cr>
-nnoremap <Leader>/ :Unite -start-insert -no-split -no-resize -no-empty grep:.<cr>
+nnoremap <Leader>/ :Unite -start-insert -no-split -no-resize -no-empty grep/git:.<cr>
 
 " Neocomplete
 inoremap <expr><C-g> neocomplete#undo_completion()
