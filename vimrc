@@ -88,6 +88,8 @@ NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'cakebaker/scss-syntax.vim'
 " misc
 NeoBundle 'scrooloose/syntastic'
+" terraform
+NeoBundle 'hashivim/vim-terraform'
 
 " -------------------------------------
 "  Appearance & Theme Plugins
