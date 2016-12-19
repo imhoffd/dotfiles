@@ -88,6 +88,8 @@ NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'cakebaker/scss-syntax.vim'
 " misc
 NeoBundle 'scrooloose/syntastic'
+" terraform
+NeoBundle 'hashivim/vim-terraform'
 
 " -------------------------------------
 "  Appearance & Theme Plugins
@@ -139,9 +141,11 @@ if executable('python3')
     let g:syntastic_python_python_exec = 'python3'
 endif
 
-if executable('eslint')
-    let g:syntastic_javascript_checkers = [ 'eslint' ]
-endif
+" if executable('eslint')
+"     let g:syntastic_javascript_checkers = [ 'eslint' ]
+" endif
+
+let g:syntastic_typescript_checkers = [ 'tslint', 'tsc' ]
 
 let g:syntastic_html_tidy_ignore_errors = [
     \ '<ion-',
