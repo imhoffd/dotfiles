@@ -74,6 +74,7 @@ for f in *; do
             fi
         fi
 
+        rm -fr $USER_HOME"/."$f
         ln -fsv $DIR"/"$f $USER_HOME"/."$f
         chown -h $user:$user $USER_HOME"/."$f
     fi
