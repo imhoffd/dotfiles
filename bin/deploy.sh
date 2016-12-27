@@ -90,12 +90,3 @@ if [[ ! -L $USER_HOME"/.oh-my-zsh/custom/themes" ]]; then
 fi
 
 vi -c ":q"
-
-if [[ -z $1 ]]; then
-    echo "Making vimproc..."
-
-    cd $DIR/vim/bundle/vimproc.vim
-    attempt make
-
-    echo -e $GREEN"   done!"$END_COLOR
-fi
