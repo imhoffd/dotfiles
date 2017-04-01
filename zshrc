@@ -104,8 +104,12 @@ function s() {
 
 source $ZSH/oh-my-zsh.sh
 
-if [[ -$GOROOT && -d "$GOPATH" ]]; then
-    PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+if [[ -d "$GOROOT" ]]; then
+    PATH=$GOROOT/bin:$PATH
+fi
+
+if [[ -d "$GOPATH" ]]; then
+    PATH=$GOPATH/bin:$PATH
 fi
 
 if [[ -d "$HOME/bin" ]]; then
