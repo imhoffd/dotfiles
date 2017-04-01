@@ -58,9 +58,6 @@ umask 002
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey -M viins 'jk' vi-cmd-mode
 
-export GOROOT=$HOME/src/go
-export GOPATH=$HOME/scripts/go
-
 if [[ -f ~/.gnupg/.gpg-agent-info ]] && [[ -n "$(pgrep gpg-agent)" ]]; then
     source ~/.gnupg/.gpg-agent-info
     export GPG_AGENT_INFO
@@ -68,21 +65,7 @@ else
     eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
 fi
 
-if [[ -d "$HOME/bin" ]]; then
-    PATH=$HOME/bin:$PATH
-fi
-
-if [[ -d "$HOME/.rvm" ]]; then
-    PATH=$HOME/.rvm/bin:$PATH
-fi
-
-if [[ -d "$GOPATH" ]]; then
-    PATH=$GOROOT/bin:$GOPATH/bin:$PATH
-fi
-
-if [[ -d "$HOME/.cargo" ]]; then
-    PATH=$HOME/.cargo/bin:$PATH
-fi
+export GOPATH=$HOME/go
 
 export VIRTUAL_ENV_DISABLE_PROMPT='1'
 
@@ -120,3 +103,19 @@ function s() {
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 source $ZSH/oh-my-zsh.sh
+
+if [[ -$GOROOT && -d "$GOPATH" ]]; then
+    PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+fi
+
+if [[ -d "$HOME/bin" ]]; then
+    PATH=$HOME/bin:$PATH
+fi
+
+if [[ -d "$HOME/.rvm" ]]; then
+    PATH=$HOME/.rvm/bin:$PATH
+fi
+
+if [[ -d "$HOME/.cargo" ]]; then
+    PATH=$HOME/.cargo/bin:$PATH
+fi
