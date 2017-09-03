@@ -82,14 +82,15 @@ else
     alias vi=vim
 fi
 
-alias    ll="ls -alh"
-alias    l="ll"
-alias    ....="cd ../../.."
-alias    .....="cd ../../../.."
-alias    dc="docker-compose"
-alias    df="df -h"
-alias    du="du -h"
-alias    nr="npm run --silent"
+alias ll="ls -alh"
+alias l="ll"
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias dc="docker-compose"
+alias dcprod="docker-compose -f docker-compose.yml -f docker-compose.prod.yml"
+alias df="df -h"
+alias du="du -h"
+
 function vman() { man "$*" | vi -; }
 
 function s() {
