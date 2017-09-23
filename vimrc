@@ -251,7 +251,7 @@ au BufRead,BufNewFile *.schema set filetype=javascript
 
 filetype plugin indent on
 
-set mouse=a
+set mouse=
 
 " When searching try to be smart about cases
 set smartcase
