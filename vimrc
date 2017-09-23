@@ -230,7 +230,7 @@ autocmd BufReadPre *.scss setlocal tabstop=2 | setlocal softtabstop=2 | setlocal
 autocmd BufReadPre *.scala setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 autocmd BufReadPre *.gradle setlocal syntax=groovy
 autocmd BufReadPre *.rst setlocal textwidth=80
-autocmd BufReadPre *.php setlocal nocursorline
+autocmd BufReadPre *.md setlocal textwidth=80
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
@@ -241,9 +241,6 @@ autocmd BufReadPost *
 " -------------------------------------
 
 au BufRead,BufNewFile *.wsgi set filetype=python
-au BufRead,BufNewFile *.module set filetype=php
-au BufRead,BufNewFile *.install set filetype=php
-au BufRead,BufNewFile *.schema set filetype=javascript
 
 " -------------------------------------
 "  General settings
