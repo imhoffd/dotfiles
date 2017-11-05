@@ -18,6 +18,8 @@ endif
 
 let g:make = 'make'
 
+runtime macros/matchit.vim
+
 " -------------------------------------
 "  Neobundle settings
 " -------------------------------------
@@ -54,8 +56,6 @@ NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'unblevable/quick-scope'
 NeoBundle 'wellle/targets.vim'
-NeoBundle 'tpope/vim-obsession'
-NeoBundle 'dwieeb/vim-matchit'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
 
@@ -65,10 +65,6 @@ NeoBundle 'kana/vim-textobj-indent'
 
 " go
 NeoBundle 'fatih/vim-go'
-" scala
-NeoBundle 'derekwyatt/vim-scala'
-" groovy
-NeoBundle 'vim-scripts/groovy.vim'
 " python
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'jmcantrell/vim-virtualenv'
@@ -80,8 +76,6 @@ NeoBundle 'jamessan/vim-gnupg'
 " git
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
-" es6
-NeoBundle 'othree/yajs.vim'
 " typescript
 NeoBundle 'leafgarland/typescript-vim'
 " scss
@@ -227,8 +221,6 @@ autocmd BufReadPre *.go setlocal tabstop=4 | setlocal softtabstop=4 | setlocal s
 autocmd BufReadPre *.yml setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 autocmd BufReadPre *.css setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 autocmd BufReadPre *.scss setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
-autocmd BufReadPre *.scala setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
-autocmd BufReadPre *.gradle setlocal syntax=groovy
 autocmd BufReadPre *.rst setlocal textwidth=80
 autocmd BufReadPre *.md setlocal textwidth=80
 autocmd BufReadPost *
