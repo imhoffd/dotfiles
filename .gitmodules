@@ -7,3 +7,6 @@
 [submodule "irssi/weed"]
 	path = irssi/weed
 	url = https://github.com/ronilaukkarinen/weed.git
+[submodule "zsh/pure"]
+	path = zsh/pure
+	url = https://github.com/sindresorhus/pure.git

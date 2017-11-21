@@ -1,13 +1,19 @@
 setopt inc_append_history
 setopt share_history
+setopt HIST_IGNORE_DUPS
+
+export HISTSIZE=2000
+export SAVEHIST="$HISTSIZE"
+export HISTFILE="$HOME/.zsh_history"
 
 export GPGKEY=6B4B0C48
+export CLICOLOR="1"
 
 export EDITOR="vim"
 export VISUAL="vim"
 
-export GOPATH=$HOME/go
-export VIRTUAL_ENV_DISABLE_PROMPT='1'
+export GOPATH="$HOME/go"
+export VIRTUAL_ENV_DISABLE_PROMPT="1"
 
 up-line-or-local-history() {
     zle set-local-history 1
@@ -55,6 +61,8 @@ fi
 
 alias ll="ls -alh"
 alias l="ll"
+alias ..="cd .."
+alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias dc="docker-compose"
@@ -63,27 +71,34 @@ alias df="df -h"
 alias du="du -h"
 
 if [[ -d "$GOROOT" ]]; then
-    PATH=$GOROOT/bin:$PATH
+    PATH="$GOROOT/bin:$PATH"
 fi
 
 if [[ -d "$GOPATH" ]]; then
-    PATH=$GOPATH/bin:$PATH
+    PATH="$GOPATH/bin:$PATH"
 fi
 
 if [[ -d "$HOME/bin" ]]; then
-    PATH=$HOME/bin:$PATH
+    PATH="$HOME/bin:$PATH"
 fi
 
 if [[ -d "$HOME/.rvm" ]]; then
-    PATH=$HOME/.rvm/bin:$PATH
+    PATH="$HOME/.rvm/bin:$PATH"
 fi
 
 if [[ -d "$HOME/.cargo" ]]; then
-    PATH=$HOME/.cargo/bin:$PATH
+    PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 if [[ -d "$HOME/.yarn/bin" ]]; then
-    PATH=$HOME/.yarn/bin:$PATH
+    PATH="$HOME/.yarn/bin:$PATH"
 fi
+
+export fpath=( "$HOME/.zsh/autoload" $fpath )
+
+autoload -Uz promptinit; promptinit
+prompt pure
+
+# autoload -Uz compinit; compinit
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

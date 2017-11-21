@@ -17,6 +17,7 @@ fi
 
 DIR="$( dirname "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" )"
 USER_HOME=$(eval echo ~$user)
+ZSH_PATH=$(which zsh)
 
 attempt () {
     output=$(eval $1 2>&1)
@@ -49,7 +50,7 @@ fi
 
 if [[ -z $ZSH_NAME ]]; then
     echo "Changing the shell of $user to zsh."
-    chsh -s /usr/bin/zsh $user
+    chsh -s $ZSH_PATH $user
     echo -e $GREEN"   done!"$END_COLOR
 fi
 
