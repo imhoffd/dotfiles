@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o errexit
+
 GRAY="\033[37m"
 GREEN="\033[32m"
 RED="\033[31m"
@@ -36,7 +38,6 @@ else
     echo -e $GRAY" - zsh"$END_COLOR
     echo -e $GRAY" - vim"$END_COLOR
     echo -e $GRAY" - tmux"$END_COLOR
-    echo -e $GRAY" - ag"$END_COLOR "(optional)"
 
     echo "Updating dotfiles and dependencies..."
 
@@ -81,12 +82,5 @@ for f in *; do
 done
 
 echo -e $GREEN"   done!"$END_COLOR
-
-if [[ ! -L $USER_HOME"/.oh-my-zsh/custom/themes" ]]; then
-    echo "Symlinking overrides..."
-    rmdir $USER_HOME/.oh-my-zsh/custom/themes > /dev/null 2>&1
-    ln -snv $DIR"/override/oh-my-zsh/custom/themes" $USER_HOME"/.oh-my-zsh/custom"
-    echo -e $GREEN"   done!"$END_COLOR
-fi
 
 vi -c ":q"
