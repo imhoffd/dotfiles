@@ -86,5 +86,3 @@ echo -e $GREEN"   done!"$END_COLOR
 
 find zsh -type d -exec chmod 700 {} \;
 find zsh -type f -exec chmod 600 {} \;
-
-vi -c ":q"
