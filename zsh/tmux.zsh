@@ -10,15 +10,11 @@ if which tmux &> /dev/null
 	then
 	# Configuration variables
 	#
-	# Automatically start tmux
-	[[ -n "$ZSH_TMUX_AUTOSTART" ]] || ZSH_TMUX_AUTOSTART=false
 	# Only autostart once. If set to false, tmux will attempt to
 	# autostart every time your zsh configs are reloaded.
 	[[ -n "$ZSH_TMUX_AUTOSTART_ONCE" ]] || ZSH_TMUX_AUTOSTART_ONCE=true
 	# Automatically connect to a previous session if it exists
 	[[ -n "$ZSH_TMUX_AUTOCONNECT" ]] || ZSH_TMUX_AUTOCONNECT=true
-	# Automatically close the terminal when tmux exits
-	[[ -n "$ZSH_TMUX_AUTOQUIT" ]] || ZSH_TMUX_AUTOQUIT=$ZSH_TMUX_AUTOSTART
 	# Set term to screen or screen-256color based on current terminal support
 	[[ -n "$ZSH_TMUX_FIXTERM" ]] || ZSH_TMUX_FIXTERM=true
 	# Set '-CC' option for iTerm2 tmux integration
@@ -61,12 +57,6 @@ if which tmux &> /dev/null
 		if [[ -n "$@" ]]
 		then
 			\tmux $@
-		# Try to connect to an existing session.
-		elif [[ "$ZSH_TMUX_AUTOCONNECT" == "true" ]]
-		then
-			\tmux `[[ "$ZSH_TMUX_ITERM2" == "true" ]] && echo '-CC '` attach || \tmux `[[ "$ZSH_TMUX_ITERM2" == "true" ]] && echo '-CC '` `[[ "$ZSH_TMUX_FIXTERM" == "true" ]] && echo '-f '$_ZSH_TMUX_FIXED_CONFIG` new-session
-			[[ "$ZSH_TMUX_AUTOQUIT" == "true" ]] && exit
-		# Just run tmux, fixing the TERM variable if requested.
 		else
 			\tmux `[[ "$ZSH_TMUX_ITERM2" == "true" ]] && echo '-CC '` `[[ "$ZSH_TMUX_FIXTERM" == "true" ]] && echo '-f '$_ZSH_TMUX_FIXED_CONFIG`
 			[[ "$ZSH_TMUX_AUTOQUIT" == "true" ]] && exit
@@ -78,17 +68,6 @@ if which tmux &> /dev/null
 
 	# Alias tmux to our wrapper function.
 	alias tmux=_zsh_tmux_plugin_run
-
-	# Autostart if not already in tmux and enabled.
-	if [[ ! -n "$TMUX" && "$ZSH_TMUX_AUTOSTART" == "true" ]]
-	then
-		# Actually don't autostart if we already did and multiple autostarts are disabled.
-		if [[ "$ZSH_TMUX_AUTOSTART_ONCE" == "false" || "$ZSH_TMUX_AUTOSTARTED" != "true" ]]
-		then
-			export ZSH_TMUX_AUTOSTARTED=true
-			_zsh_tmux_plugin_run
-		fi
-	fi
 else
 	print "zsh tmux plugin: tmux not found. Please install tmux before using this plugin."
 fi
