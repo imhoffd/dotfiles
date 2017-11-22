@@ -64,7 +64,7 @@ for f in *; do
         continue
     fi
 
-    if [[ ! "bin override README.md" =~ $f &&
+    if [[ ! "bin README.md" =~ $f &&
           ! -e "$(cat .gitignore | grep '^'$f'$')" &&
           ! -L $USER_HOME/.$f ]]; then
         if [[ -e $USER_HOME/.$f ]]; then
