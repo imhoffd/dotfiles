@@ -95,6 +95,8 @@ prompt pure
 
 autoload -Uz compinit; compinit
 
+source "$HOME/.zsh/tmux.zsh"
+
 if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
