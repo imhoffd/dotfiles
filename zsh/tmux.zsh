@@ -53,6 +53,8 @@ if which tmux &> /dev/null
 	# Wrapper function for tmux.
 	function _zsh_tmux_plugin_run()
 	{
+		export TERM=xterm-256color
+
 		# We have other arguments, just run them
 		if [[ -n "$@" ]]
 		then
