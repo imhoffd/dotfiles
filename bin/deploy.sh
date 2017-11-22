@@ -77,11 +77,14 @@ for f in *; do
         fi
 
         rm -fr $USER_HOME"/."$f
-        ln -fsv $DIR"/"$f $USER_HOME"/."$f
-        chown -h $user:$user $USER_HOME"/."$f
+        ln -fsv "$DIR/$f" "$USER_HOME/.$f"
+        chown -h "$user:$user" "$USER_HOME/.$f"
     fi
 done
 
 echo -e $GREEN"   done!"$END_COLOR
+
+find zsh -type d -exec chmod 700 {} \;
+find zsh -type f -exec chmod 600 {} \;
 
 vi -c ":q"
