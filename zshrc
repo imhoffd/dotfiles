@@ -94,4 +94,6 @@ prompt pure
 
 # autoload -Uz compinit; compinit
 
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+if [[ -f ~/.zshrc.local ]]; then
+    source ~/.zshrc.local
+fi
