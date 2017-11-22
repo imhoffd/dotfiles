@@ -52,13 +52,6 @@ if [[ -d "$HOME/.nvm" ]]; then
     alias nvm='unalias nvm && source "$HOME"/.nvm/nvm.sh && nvm'
 fi
 
-# shortcuts
-if [[ -x "$(which nvim)" ]]; then
-    alias vi=nvim
-else
-    alias vi=vim
-fi
-
 alias ll="ls -alh"
 alias l="ll"
 alias ..="cd .."
