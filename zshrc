@@ -52,7 +52,6 @@ if [[ -d "$HOME/.nvm" ]]; then
     alias nvm='unalias nvm && source "$HOME"/.nvm/nvm.sh && nvm'
 fi
 
-alias ls="ls --color"
 alias ll="ls -alh"
 alias l="ll"
 alias ..="cd .."
