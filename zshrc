@@ -93,7 +93,7 @@ export fpath=( "$HOME/.zsh/autoload" $fpath )
 autoload -Uz promptinit; promptinit
 prompt pure
 
-# autoload -Uz compinit; compinit
+autoload -Uz compinit; compinit
 
 if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
