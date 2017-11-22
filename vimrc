@@ -12,89 +12,11 @@
 if has('vim_starting')
     set nocompatible " </3 vi
     filetype off
-
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-
-let g:make = 'make'
 
 runtime macros/matchit.vim
 
-" -------------------------------------
-"  Neobundle settings
-" -------------------------------------
-
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" -------------------------------------
-"  Essential Plugins
-" -------------------------------------
-
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'tpope/vim-sensible'
-NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': g:make}}
-
-" -------------------------------------
-"  Productivity Plugins
-" -------------------------------------
-
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'tacroe/unite-mark'
-NeoBundle 'ujihisa/unite-colorscheme'
-if has("nvim")
-    NeoBundle 'Shougo/deoplete.nvim'
-else
-    NeoBundle 'Shougo/neocomplete.vim'
-endif
-NeoBundle 'kshenoy/vim-signature'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'tpope/vim-eunuch'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'unblevable/quick-scope'
-NeoBundle 'wellle/targets.vim'
-NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'kana/vim-textobj-indent'
-
-" -------------------------------------
-"  Integration Plugins
-" -------------------------------------
-
-" go
-NeoBundle 'fatih/vim-go'
-" python
-NeoBundle 'hynek/vim-python-pep8-indent'
-NeoBundle 'jmcantrell/vim-virtualenv'
-NeoBundle 'tweekmonster/braceless.vim'
-" rust
-NeoBundle 'rust-lang/rust.vim'
-" gpg
-NeoBundle 'jamessan/vim-gnupg'
-" git
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'airblade/vim-gitgutter'
-" typescript
-NeoBundle 'leafgarland/typescript-vim'
-" scss
-NeoBundle 'cakebaker/scss-syntax.vim'
-" misc
-NeoBundle 'scrooloose/syntastic'
-" terraform
-NeoBundle 'hashivim/vim-terraform'
-
-" -------------------------------------
-"  Appearance & Theme Plugins
-" -------------------------------------
-
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'edkolev/tmuxline.vim'
-
-call neobundle#end()
+packloadall
 
 " ------------------------------------
 "  vim-go settings
@@ -110,18 +32,6 @@ let g:go_fmt_command = "goimports"
 let g:rustfmt_autosave = 1
 
 " ------------------------------------
-"  vim-virtualenv settings
-" ------------------------------------
-
-let g:virtualenv_directory = '.'
-let g:virtualenv_auto_activate = 0
-
-" I'll do the auto-activation for my workflow, ty!
-if filereadable(expand("./venv/bin/activate"))
-    call virtualenv#activate("venv")
-endif
-
-" ------------------------------------
 "  gitgutter settings
 " ------------------------------------
 
@@ -130,14 +40,6 @@ let g:gitgutter_realtime = 1
 " ------------------------------------
 "  syntastic settings
 " ------------------------------------
-
-if executable('python3')
-    let g:syntastic_python_python_exec = 'python3'
-endif
-
-" if executable('eslint')
-"     let g:syntastic_javascript_checkers = [ 'eslint' ]
-" endif
 
 let g:syntastic_typescript_checkers = [ 'tslint', 'tsc' ]
 
@@ -181,19 +83,6 @@ let g:unite_source_history_yank_enable = 1
 let g:unite_source_mark_marks =
             \   "abcdefghijklmnopqrstuvwxyz"
             \ . "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
-" ------------------------------------
-"  neocomplete/deoplete settings
-" ------------------------------------
-
-let g:acp_enableAtStartup = 0
-
-if has("nvim")
-    let g:deoplete#enable_at_startup = 1
-else
-    let g:neocomplete#enable_at_startup = 1
-    let g:neocomplete#enable_smart_case = 1
-endif
 
 " ------------------------------------
 "  tmuxline settings
@@ -347,11 +236,6 @@ nnoremap <Leader>y :Unite -start-insert -no-split -no-resize history/yank<cr>
 nnoremap <Leader>o :Unite -start-insert -no-split -no-resize outline<cr>
 nnoremap <Leader>/ :Unite -start-insert -no-split -no-resize -no-empty grep/git:.<cr>
 
-" Neocomplete
-inoremap <expr><C-g> neocomplete#undo_completion()
-inoremap <expr><C-l> neocomplete#complete_common_string()
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-
 " Commands
 command! W w
 command! Q q
@@ -363,5 +247,3 @@ command! Q q
 if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
-
-NeoBundleCheck
