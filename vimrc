@@ -38,6 +38,16 @@ let g:rustfmt_autosave = 1
 let g:gitgutter_realtime = 1
 
 " ------------------------------------
+"  neocomplete settings
+" ------------------------------------
+
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+
+NeoCompleteEnable " TODO: help
+
+" ------------------------------------
 "  syntastic settings
 " ------------------------------------
 
@@ -235,6 +245,11 @@ nnoremap <Leader>b :Unite -start-insert -no-split -no-resize buffer<cr>
 nnoremap <Leader>y :Unite -start-insert -no-split -no-resize history/yank<cr>
 nnoremap <Leader>o :Unite -start-insert -no-split -no-resize outline<cr>
 nnoremap <Leader>/ :Unite -start-insert -no-split -no-resize -no-empty grep/git:.<cr>
+
+" Neocomplete
+inoremap <expr><C-g> neocomplete#undo_completion()
+inoremap <expr><C-l> neocomplete#complete_common_string()
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Commands
 command! W w

@@ -79,3 +79,6 @@
 [submodule "vim/pack/plugins/start/tmuxline.vim"]
 	path = vim/pack/plugins/start/tmuxline.vim
 	url = https://github.com/edkolev/tmuxline.vim.git
+[submodule "vim/pack/plugins/start/neocomplete.vim"]
+	path = vim/pack/plugins/start/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim.git
