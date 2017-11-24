@@ -77,5 +77,5 @@ done
 
 echo -e $GREEN"   done!"$END_COLOR
 
-find zsh -type d -exec chmod 700 {} \;
-find zsh -type f -exec chmod 600 {} \;
+find zsh -type d -exec chmod 755 {} \;
+find zsh -type f -exec chmod 644 {} \;
