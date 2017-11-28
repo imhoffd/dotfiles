@@ -94,6 +94,8 @@ prompt pure
 
 autoload -Uz compinit; compinit
 
+zstyle ':completion:*' menu select
+
 source "$HOME/.zsh/tmux.zsh"
 
 if [[ -f ~/.zshrc.local ]]; then
