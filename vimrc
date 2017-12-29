@@ -192,6 +192,7 @@ set number
 set relativenumber
 set numberwidth=5
 set showcmd
+
 if !has("nvim")
     set lazyredraw
 end
@@ -218,6 +219,7 @@ set shiftwidth=4
 set nowrap
 set nojoinspaces
 set diffopt+=vertical
+set emoji
 
 " -------------------------------------
 "  Keyboard shortcuts
