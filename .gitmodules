@@ -58,9 +58,6 @@
 [submodule "vim/pack/plugins/start/vim-gitgutter"]
 	path = vim/pack/plugins/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "vim/pack/plugins/start/typescript-vim"]
-	path = vim/pack/plugins/start/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "vim/pack/plugins/start/scss-syntax.vim"]
 	path = vim/pack/plugins/start/scss-syntax.vim
 	url = https://github.com/cakebaker/scss-syntax.vim.git
@@ -85,3 +82,6 @@
 [submodule "vim/pack/plugins/start/vim-go"]
 	path = vim/pack/plugins/start/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "vim/pack/plugins/start/yats.vim"]
+	path = vim/pack/plugins/start/yats.vim
+	url = https://github.com/HerringtonDarkholme/yats.vim.git
