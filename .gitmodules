@@ -82,6 +82,6 @@
 [submodule "vim/pack/plugins/start/vim-go"]
 	path = vim/pack/plugins/start/vim-go
 	url = https://github.com/fatih/vim-go.git
-[submodule "vim/pack/plugins/start/yats.vim"]
-	path = vim/pack/plugins/start/yats.vim
-	url = https://github.com/HerringtonDarkholme/yats.vim.git
+[submodule "vim/pack/plugins/start/typescript-vim"]
+	path = vim/pack/plugins/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
