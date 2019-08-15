@@ -9,10 +9,8 @@
 "
 " -------------------------------------
 
-if has('vim_starting')
-    set nocompatible " </3 vi
-    filetype off
-endif
+set nocompatible " </3 vi
+filetype off
 
 runtime macros/matchit.vim
 
@@ -32,26 +30,8 @@ let g:go_fmt_command = "goimports"
 let g:rustfmt_autosave = 1
 
 " ------------------------------------
-"  gitgutter settings
-" ------------------------------------
-
-let g:gitgutter_realtime = 1
-
-" ------------------------------------
-"  neocomplete settings
-" ------------------------------------
-
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-
-NeoCompleteEnable " TODO: help
-
-" ------------------------------------
 "  syntastic settings
 " ------------------------------------
-
-let g:syntastic_typescript_checkers = [ 'tslint', 'tsc' ]
 
 let g:syntastic_html_tidy_ignore_errors = [
     \ '<ion-',
@@ -61,9 +41,18 @@ let g:syntastic_html_tidy_ignore_errors = [
     \ 'proprietary attribute "ng-',
     \ 'proprietary attribute "on',
     \ 'trimming empty <i>' ]
+
 let g:syntastic_quiet_messages = {
     \ "type": "style",
     \ "regex": "main redeclared in this block"}
+
+" ------------------------------------
+"  coc.nvim settings
+" ------------------------------------
+
+set updatetime=300
+set signcolumn=yes
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " ------------------------------------
 "  airline settings
@@ -132,19 +121,18 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif"`'")"'")
 
-" -------------------------------------
-"  yats.vim customizations
-" -------------------------------------
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
-autocmd BufEnter *.ts,*tsx hi link typescriptPredefinedType Type
-autocmd BufEnter *.ts,*tsx hi link typescriptImport Include
-autocmd BufEnter *.ts,*tsx hi link typescriptExport Include
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " -------------------------------------
 "  Filetype settings for extensions
 " -------------------------------------
 
-au BufRead,BufNewFile *.wsgi set filetype=python
+autocmd BufRead,BufNewFile *.jsx set filetype=javascript.tsx
+autocmd BufRead,BufNewFile *.tsx set filetype=typescript.tsx
+autocmd BufRead,BufNewFile *.wsgi set filetype=python
 
 " -------------------------------------
 "  General settings
@@ -199,6 +187,7 @@ set number
 set relativenumber
 set numberwidth=5
 set showcmd
+set cmdheight=2
 
 if !has("nvim")
     set lazyredraw
@@ -211,6 +200,7 @@ colorscheme jellybeans
 " -------------------------------------
 
 set nobackup
+set nowritebackup
 set nowb
 set noswapfile
 
@@ -261,10 +251,26 @@ nnoremap <Leader>y :Unite -start-insert -no-split -no-resize history/yank<cr>
 nnoremap <Leader>o :Unite -start-insert -no-split -no-resize outline<cr>
 nnoremap <Leader>/ :Unite -start-insert -no-split -no-resize -no-empty grep/git:.<cr>
 
-" Neocomplete
-inoremap <expr><C-g> neocomplete#undo_completion()
-inoremap <expr><C-l> neocomplete#complete_common_string()
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" coc.nvim
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
 
 " Commands
 command! W w
