@@ -71,7 +71,8 @@ for f in *; do
 
         rm -fr $USER_HOME"/."$f
         ln -fsv "$DIR/$f" "$USER_HOME/.$f"
-        chown -h "$user:$user" "$USER_HOME/.$f"
+        chown -h "$user" "$USER_HOME/.$f"
+        chgrp -h "$user" "$USER_HOME/.$f" || echo "[warn] Could not chgrp $user $USER_HOME/.$f!"
     fi
 done
 
