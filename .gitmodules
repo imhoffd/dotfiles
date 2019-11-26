@@ -91,3 +91,6 @@
 [submodule "vim/pack/plugins/start/vim-prettier"]
 	path = vim/pack/plugins/start/vim-prettier
 	url = https://github.com/prettier/vim-prettier.git
+[submodule "vim/pack/plugins/start/markdown-preview.nvim"]
+	path = vim/pack/plugins/start/markdown-preview.nvim
+	url = https://github.com/iamcco/markdown-preview.nvim.git
