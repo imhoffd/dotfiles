@@ -1,30 +1,12 @@
 [user]
   name = Daniel Imhoff
   email = dwieeb@gmail.com
-  signingkey = 661327B36B4B0C48
 [github]
   user = dwieeb
 [credential]
   helper = cache --timeout=3600
 [push]
   default = current
-[color]
-  branch = auto
-  diff = auto
-  status = auto
-[color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
-[color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
-[color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
 [core]
   autocrlf = input
 [alias]
