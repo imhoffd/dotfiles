@@ -35,9 +35,9 @@ zle -N up-line-or-local-history
 zle -N down-line-or-local-history
 
 umask 002
-bindkey '^R' history-incremental-pattern-search-backward
 bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode
+bindkey '^R' history-incremental-pattern-search-backward
 
 if [[ -f ~/.gnupg/.gpg-agent-info ]] && [[ -n "$(pgrep gpg-agent)" ]]; then
     source ~/.gnupg/.gpg-agent-info
