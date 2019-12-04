@@ -88,6 +88,11 @@ if [[ -d "$HOME/.yarn/bin" ]]; then
     PATH="$HOME/.yarn/bin:$PATH"
 fi
 
+if [[ -d "$HOME/Library/Android/sdk" ]]; then
+    PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+    PATH="$HOME/Library/Android/sdk/emulator:$PATH"
+fi
+
 export fpath=( "$HOME/.zsh/autoload" $fpath )
 
 autoload -Uz promptinit; promptinit
