@@ -78,7 +78,7 @@ done
 
 echo -e $GREEN"   done!"$END_COLOR
 
-rm "$USER_HOME"/.zcompdump*
+rm "$USER_HOME"/.zcompdump* || true
 
 find zsh -type d -exec chmod 755 {} \;
 find zsh -type f -exec chmod 644 {} \;
