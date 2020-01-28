@@ -120,10 +120,10 @@ vnoremap < <gv
 vnoremap > >gv
 
 nnoremap <Leader>p :Clap files<cr>
-" nnoremap <Leader>f :Unite -start-insert -no-split -no-resize file file/new directory/new<cr>
 nnoremap <Leader>b :Clap buffers<cr>
 nnoremap <Leader>y :Clap yanks<cr>
 nnoremap <Leader>/ :Clap grep<cr>
+nnoremap <Leader>e :e <C-R>=fnamemodify(expand("%:p:h"), ":~:.") . "/" <CR>
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
