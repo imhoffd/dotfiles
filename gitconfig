@@ -15,5 +15,3 @@
 [log]
   decorate = true
   abbrevCommit = true
-[url "git@github.com:"]
-  insteadOf = https://github.com/
