@@ -49,17 +49,18 @@ fi
 
 echo "Symlinking configuration files..."
 
-personal_files="gitconfig"
+CONFIG_FILES=(
+    "config/nvim/init.vim"
+    "irssi"
+    "tmux"
+    "tmux.conf"
+    "tmuxline.conf"
+    "zsh"
+    "zshrc"
+)
 
-for f in *; do
-    if [[ $root_ran && $personal_files =~ $f ]]; then
-        echo "Skipping personal files ($personal_files)..."
-        continue
-    fi
-
-    if [[ ! "bin README.md" =~ $f &&
-          ! -e "$(cat .gitignore | grep '^'$f'$')" &&
-          ! -L $USER_HOME/.$f ]]; then
+for f in ${CONFIG_FILES[@]}; do
+    if [[ ! -L $USER_HOME/.$f ]]; then
         if [[ -e $USER_HOME/.$f ]]; then
             read -p "Overwrite $USER_HOME/.$f? (y/n): " -n 1
             echo
