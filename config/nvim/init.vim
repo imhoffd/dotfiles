@@ -124,6 +124,7 @@ nnoremap <Leader>b :Clap buffers<cr>
 nnoremap <Leader>y :Clap yanks<cr>
 nnoremap <Leader>/ :Clap grep<cr>
 nnoremap <Leader>e :e <C-R>=fnamemodify(expand("%:p:h"), ":~:.") . "/" <CR>
+nnoremap <Leader>f :e <C-R>=fnamemodify(getcwd(), ":~:.") . "/" <CR>
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
