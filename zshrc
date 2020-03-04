@@ -6,7 +6,6 @@ export HISTSIZE=2000
 export SAVEHIST="$HISTSIZE"
 export HISTFILE="$HOME/.zsh_history"
 
-export GPGKEY=6B4B0C48
 export CLICOLOR="1"
 
 if [[ -n "$(command -v nvim)" ]]; then
