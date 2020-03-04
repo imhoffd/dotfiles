@@ -103,7 +103,13 @@ export fpath=( "$HOME/.zsh/autoload" $fpath )
 autoload -Uz promptinit; promptinit
 prompt pure
 
-autoload -Uz compinit; compinit
+autoload -Uz compinit; compinit -u
+COMPAUDIT_RESULT=$(compaudit 2> /dev/null)
+
+if [[ -n "$COMPAUDIT_RESULT" ]]; then
+  echo "\n[!] compaudit found insecure directories:"
+  echo $COMPAUDIT_RESULT
+fi
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
