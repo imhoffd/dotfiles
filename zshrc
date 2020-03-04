@@ -9,8 +9,14 @@ export HISTFILE="$HOME/.zsh_history"
 export GPGKEY=6B4B0C48
 export CLICOLOR="1"
 
-export EDITOR="vim"
-export VISUAL="vim"
+if [[ -n "$(command -v nvim)" ]]; then
+    export EDITOR="nvim"
+    export VISUAL="nvim"
+    alias vim="nvim"
+else
+    export EDITOR="vim"
+    export VISUAL="vim"
+fi
 
 export GOPATH="$HOME/go"
 export VIRTUAL_ENV_DISABLE_PROMPT="1"
