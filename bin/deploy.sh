@@ -71,6 +71,7 @@ for f in ${CONFIG_FILES[@]}; do
         fi
 
         rm -fr $USER_HOME"/."$f
+        mkdir -p $(dirname "$USER_HOME/.$f")
         ln -fsv "$DIR/$f" "$USER_HOME/.$f"
         chown -h "$user" "$USER_HOME/.$f"
         chgrp -h "$user" "$USER_HOME/.$f" || echo "[warn] Could not chgrp $user $USER_HOME/.$f!"
