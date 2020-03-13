@@ -16,7 +16,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'leafgarland/typescript-vim'
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary', 'tag': 'v0.9' }
 Plug 'nanotech/jellybeans.vim', { 'as': 'jellybeans' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'prettier/vim-prettier'
