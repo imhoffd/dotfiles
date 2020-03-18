@@ -11,11 +11,11 @@ exe 'source ' . s:plug
 
 call plug#begin(s:plugdir)
 
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'kshenoy/vim-signature'
-Plug 'leafgarland/typescript-vim'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary', 'tag': 'v0.9' }
 Plug 'nanotech/jellybeans.vim', { 'as': 'jellybeans' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -34,7 +34,7 @@ Plug 'wellle/targets.vim'
 
 call plug#end()
 
-" Functionality
+" FUNCTIONALITY
 
 set expandtab
 set hidden
@@ -51,7 +51,7 @@ set tabstop=2
 command! W w
 command! Q q
 
-" Appearance
+" APPEARANCE
 
 colorscheme jellybeans
 
@@ -69,7 +69,7 @@ set signcolumn=yes
 set updatetime=300
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" Plugin Settings
+" PLUGIN SETTINGS
 
 let g:syntastic_html_tidy_ignore_errors = [
     \ '<ion-',
@@ -94,8 +94,6 @@ let g:clap_theme = 'material_design_dark'
 let g:clap_layout = { 'relative': 'editor' }
 
 autocmd User ClapOnEnter call g:clap.display.setbufvar('&relativenumber', 0)
-autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
-autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 
 let g:tmuxline_preset = 'nightly_fox'
 let g:tmuxline_separators = {
@@ -105,7 +103,29 @@ let g:tmuxline_separators = {
     \ 'right_alt' : '<',
     \ 'space' : ' '}
 
-" Key Mappings
+" yats.vim
+hi def link typescriptImport           Include
+hi def link typescriptImportType       typescriptImport
+hi def link typescriptExport           Include
+hi def link typescriptClassStatic      Keyword
+hi def link typescriptAliasDeclaration NONE
+hi def link typescriptType             NONE
+hi def link typescriptTypeParameter    NONE
+hi def link typescriptTypeReference    Type
+hi def link typescriptInterfaceName    NONE
+hi def link typescriptMember           NONE
+hi def link typescriptLabel            NONE
+hi def link typescriptFuncArg          NONE
+hi def link typescriptArrowFuncArg     typescriptFuncArg
+hi def link typescriptOperator         Keyword
+hi def link typescriptCastKeyword      Keyword
+hi def link typescriptCall             NONE
+hi def link typescriptFuncType         NONE
+hi def link typescriptProp             NONE
+hi def link typescriptDateMethod       typescriptProp
+hi def link typescriptDOMEventMethod   typescriptProp
+
+" KEY MAPPINGS
 
 let mapleader="\<Space>"
 
