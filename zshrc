@@ -1,8 +1,10 @@
-setopt inc_append_history
-setopt share_history
-setopt HIST_IGNORE_DUPS
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
 
-export HISTSIZE=2000
+export HISTSIZE=25000
 export SAVEHIST="$HISTSIZE"
 export HISTFILE="$HOME/.zsh_history"
 
