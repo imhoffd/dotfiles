@@ -147,6 +147,7 @@ hi def link typescriptBOMHistoryProp            typescriptProp
 hi def link typescriptBOMLocationMethod         typescriptProp
 hi def link typescriptBOMNavigatorMethod        typescriptProp
 hi def link typescriptBOMNavigatorProp          typescriptProp
+hi def link typescriptBOMNetworkProp            typescriptProp
 hi def link typescriptBOMWindowMethod           typescriptProp
 hi def link typescriptBOMWindowProp             typescriptProp
 hi def link typescriptCacheMethod               typescriptProp
@@ -167,6 +168,7 @@ hi def link typescriptDecodingMethod            typescriptProp
 hi def link typescriptES6SetMethod              typescriptProp
 hi def link typescriptES6SetProp                typescriptProp
 hi def link typescriptEncodingMethod            typescriptProp
+hi def link typescriptFileListMethod            typescriptProp
 hi def link typescriptFileReaderMethod          typescriptProp
 hi def link typescriptFileReaderProp            typescriptProp
 hi def link typescriptFunctionMethod            typescriptProp
@@ -189,6 +191,7 @@ hi def link typescriptRequestMethod             typescriptProp
 hi def link typescriptRequestProp               typescriptProp
 hi def link typescriptResponseMethod            typescriptProp
 hi def link typescriptResponseProp              typescriptProp
+hi def link typescriptServiceWorkerMethod       typescriptProp
 hi def link typescriptServiceWorkerProp         typescriptProp
 hi def link typescriptStringMethod              typescriptProp
 hi def link typescriptURLStaticMethod           typescriptProp
