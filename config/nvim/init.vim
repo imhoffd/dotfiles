@@ -20,7 +20,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 Plug 'nanotech/jellybeans.vim', { 'as': 'jellybeans' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'prettier/vim-prettier'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
