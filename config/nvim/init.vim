@@ -1,6 +1,6 @@
-let s:init = stdpath('config') . '/init.vim'
-let s:plug = stdpath('config') . '/plug.vim'
-let s:plugdir = stdpath('data') . '/plugged'
+let s:init = stdpath('config') . '/init.vim' " ~/.config/nvim/init.vim
+let s:plug = stdpath('config') . '/plug.vim' " ~/.config/nvim/plug.vim
+let s:plugdir = stdpath('data') . '/plugged' " ~/.local/share/nvim/plugged
 
 if !filereadable(s:plug)
   silent exe '!curl -fLo ' . s:plug . ' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
