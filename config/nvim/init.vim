@@ -174,6 +174,7 @@ hi def link typescriptFileListMethod            typescriptProp
 hi def link typescriptFileReaderMethod          typescriptProp
 hi def link typescriptFileReaderProp            typescriptProp
 hi def link typescriptFunctionMethod            typescriptProp
+hi def link typescriptGeolocationMethod         typescriptProp
 hi def link typescriptHeadersMethod             typescriptProp
 hi def link typescriptJSONStaticMethod          typescriptProp
 hi def link typescriptMathStaticMethod          typescriptProp
@@ -198,6 +199,7 @@ hi def link typescriptServiceWorkerProp         typescriptProp
 hi def link typescriptStringMethod              typescriptProp
 hi def link typescriptURLStaticMethod           typescriptProp
 hi def link typescriptURLUtilsProp              typescriptProp
+hi def link typescriptXHRProp                   typescriptProp
 
 " KEY MAPPINGS
 
