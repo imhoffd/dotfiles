@@ -20,6 +20,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 Plug 'nanotech/jellybeans.vim', { 'as': 'jellybeans' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'overcache/NeoSolarized'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
@@ -37,6 +38,7 @@ call plug#end()
 
 " FUNCTIONALITY
 
+set termguicolors
 set expandtab
 set hidden
 set nobackup
