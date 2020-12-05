@@ -10,6 +10,8 @@ export HISTFILE="$HOME/.zsh_history"
 
 export CLICOLOR="1"
 
+export GPG_TTY=$(tty)
+
 if [[ -n "$(command -v nvim)" ]]; then
     export EDITOR="nvim"
     export VISUAL="nvim"
