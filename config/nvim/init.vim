@@ -95,6 +95,7 @@ let g:airline_theme = 'jellybeans'
 
 let g:clap_theme = 'material_design_dark'
 let g:clap_layout = { 'relative': 'editor' }
+let g:clap_enable_background_shadow = v:false
 
 autocmd User ClapOnEnter call g:clap.display.setbufvar('&relativenumber', 0)
 
