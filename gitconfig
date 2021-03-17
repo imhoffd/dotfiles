@@ -16,3 +16,5 @@
 [log]
   decorate = true
   abbrevCommit = true
+[pull]
+	ff = only
