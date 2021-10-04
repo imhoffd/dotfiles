@@ -132,6 +132,7 @@ hi def link typescriptMappedIn             Type
 hi def link typescriptMember               NONE
 hi def link typescriptModule               typescriptImport
 hi def link typescriptOperator             Keyword
+hi def link typescriptParamImpl            typescriptString
 hi def link typescriptReadonlyArrayKeyword Type
 hi def link typescriptType                 NONE
 hi def link typescriptTypeBracket          Type
@@ -176,6 +177,7 @@ hi def link typescriptFileReaderMethod          typescriptProp
 hi def link typescriptFileReaderProp            typescriptProp
 hi def link typescriptFunctionMethod            typescriptProp
 hi def link typescriptGeolocationMethod         typescriptProp
+hi def link typescriptGlobalMethod              typescriptProp
 hi def link typescriptHeadersMethod             typescriptProp
 hi def link typescriptJSONStaticMethod          typescriptProp
 hi def link typescriptMathStaticMethod          typescriptProp
