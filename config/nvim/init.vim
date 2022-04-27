@@ -265,3 +265,8 @@ nmap <leader>rn <Plug>(coc-rename)
 " vim-prettier
 
 nmap <leader>t :Prettier<cr>
+
+" copilot.vim
+
+imap <C-j> <Plug>(copilot-previous)
+imap <C-k> <Plug>(copilot-next)
