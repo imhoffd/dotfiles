@@ -218,12 +218,18 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+command! SynStack echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+
+" vim-clap
+
 nnoremap <Leader>p :Clap files<cr>
 nnoremap <Leader>b :Clap buffers<cr>
 nnoremap <Leader>y :Clap yanks<cr>
 nnoremap <Leader>/ :Clap grep<cr>
 nnoremap <Leader>e :e <C-R>=fnamemodify(expand("%:p:h"), ":~:.") . "/" <CR>
 nnoremap <Leader>f :e <C-R>=fnamemodify(getcwd(), ":~:.") . "/" <CR>
+
+" coc.nvim
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -235,8 +241,6 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-command! SynStack echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -257,4 +261,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
+
+" vim-prettier
+
 nmap <leader>t :Prettier<cr>
