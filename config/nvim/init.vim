@@ -73,6 +73,8 @@ set signcolumn=yes
 set updatetime=300
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+autocmd BufNewFile,BufRead *.mdx set filetype=markdown
+
 " PLUGIN SETTINGS
 
 let g:syntastic_html_tidy_ignore_errors = [
