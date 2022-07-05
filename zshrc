@@ -72,6 +72,7 @@ alias dc="docker-compose"
 alias dcprod="docker-compose -f docker-compose.yml -f docker-compose.prod.yml"
 alias df="df -h"
 alias du="du -h"
+alias p="pnpm"
 
 if [[ -d "$GOROOT" ]]; then
     PATH="$GOROOT/bin:$PATH"
