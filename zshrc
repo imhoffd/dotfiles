@@ -47,6 +47,7 @@ umask 002
 bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode
 bindkey '^R' history-incremental-pattern-search-backward
+bindkey -M vicmd v edit-command-line
 
 if [[ -f ~/.gnupg/.gpg-agent-info ]] && [[ -n "$(pgrep gpg-agent)" ]]; then
     source ~/.gnupg/.gpg-agent-info
@@ -104,6 +105,8 @@ if [[ -d "$HOME/Library/Android/sdk" ]]; then
 fi
 
 export fpath=( "$HOME/.zsh/autoload" $fpath )
+
+autoload edit-command-line; zle -N edit-command-line
 
 autoload -Uz promptinit; promptinit
 prompt pure
