@@ -40,7 +40,6 @@ call plug#end()
 
 " FUNCTIONALITY
 
-set termguicolors
 set expandtab
 set hidden
 set nobackup
@@ -52,6 +51,7 @@ set nowritebackup
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
+set termguicolors
 
 command! W w
 command! Q q
@@ -71,8 +71,8 @@ set number
 set relativenumber
 set shortmess+=c
 set signcolumn=yes
-set updatetime=300
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+set updatetime=300
 
 autocmd BufNewFile,BufRead *.mdx set filetype=markdown
 
