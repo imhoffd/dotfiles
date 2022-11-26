@@ -14,6 +14,7 @@ call plug#begin(s:plugdir)
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'github/copilot.vim'
 Plug 'keith/swift.vim'
