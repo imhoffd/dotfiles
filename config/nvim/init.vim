@@ -212,6 +212,8 @@ hi def link typescriptXHRProp                   NONE
 let mapleader="\<Space>"
 
 inoremap jk <Esc>
+inoremap jc console.log()<Esc>i
+
 
 map Q <Nop>
 map qq <Nop>
