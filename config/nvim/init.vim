@@ -23,7 +23,6 @@ Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 Plug 'nanotech/jellybeans.vim', { 'as': 'jellybeans' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'overcache/NeoSolarized'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
@@ -258,6 +257,9 @@ function! ShowDocumentation()
   endif
 endfunction
 
+command! -bar -nargs=0 ESLint :CocCommand eslint.executeAutofix
+command! -bar -nargs=0 Prettier :CocCommand prettier.formatFile
+
 nnoremap <silent> K :call ShowDocumentation()<CR>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -265,9 +267,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 
-" vim-prettier
-
-nmap <leader>t :Prettier<cr>
+nmap <leader>t :Prettier <bar> :ESLint<cr>
 
 " copilot.vim
 
