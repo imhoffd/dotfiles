@@ -41,6 +41,7 @@ call plug#end()
 
 set expandtab
 set hidden
+set mouse=
 set nobackup
 set nojoinspaces
 set noswapfile
