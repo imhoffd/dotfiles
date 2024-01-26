@@ -75,6 +75,14 @@ alias df="df -h"
 alias du="du -h"
 alias p="pnpm"
 
+alias gs="git status"
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias ga="git add"
+alias gap="git add -p"
+alias gc="git commit"
+alias gp="git pull"
+
 if [[ -d "$GOROOT" ]]; then
     PATH="$GOROOT/bin:$PATH"
 fi
