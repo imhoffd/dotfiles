@@ -194,6 +194,7 @@ hi def link typescriptResponseProp              NONE
 hi def link typescriptServiceWorkerMethod       NONE
 hi def link typescriptServiceWorkerProp         NONE
 hi def link typescriptStringMethod              NONE
+hi def link typescriptTestGlobal                NONE
 hi def link typescriptType                      NONE
 hi def link typescriptTypeBracket               Type
 hi def link typescriptTypeBrackets              Type
