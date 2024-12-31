@@ -97,9 +97,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#hunks#enabled = 0
 let g:airline_theme = 'jellybeans'
 
-let g:clap_theme = 'material_design_dark'
-let g:clap_layout = { 'relative': 'editor' }
-let g:clap_enable_background_shadow = v:false
+let g:clap_layout = { 'relative': 'editor', 'width': '45%', 'col': '10%', 'height': '90%', 'row': '5%' }
 
 autocmd User ClapOnEnter call g:clap.display.setbufvar('&relativenumber', 0)
 
