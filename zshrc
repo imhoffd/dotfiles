@@ -76,6 +76,7 @@ alias du="du -h"
 alias p="pnpm"
 
 alias gs="git status"
+alias gss="git stash save"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias ga="git add"
