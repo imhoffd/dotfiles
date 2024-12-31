@@ -82,6 +82,7 @@ alias ga="git add"
 alias gap="git add -p"
 alias gc="git commit"
 alias gp="git pull"
+alias gl="git log"
 
 if [[ -d "$GOROOT" ]]; then
     PATH="$GOROOT/bin:$PATH"
