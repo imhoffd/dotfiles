@@ -52,6 +52,7 @@ echo "Symlinking configuration files..."
 CONFIG_FILES=(
     "config/kitty/kitty.conf"
     "config/kitty/theme.conf"
+    "config/nvim/lua"
     "config/nvim/init.vim"
     "gitconfig"
     "irssi"

@@ -19,7 +19,9 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'github/copilot.vim'
 Plug 'keith/swift.vim'
 Plug 'kshenoy/vim-signature'
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nanotech/jellybeans.vim', { 'as': 'jellybeans' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'overcache/NeoSolarized'
@@ -96,10 +98,6 @@ let g:airline#extensions#tmuxline#enabled = 0
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#hunks#enabled = 0
 let g:airline_theme = 'jellybeans'
-
-let g:clap_layout = { 'relative': 'editor', 'width': '45%', 'col': '10%', 'height': '90%', 'row': '5%' }
-
-autocmd User ClapOnEnter call g:clap.display.setbufvar('&relativenumber', 0)
 
 let g:tmuxline_preset = 'nightly_fox'
 let g:tmuxline_separators = {
@@ -224,12 +222,16 @@ vnoremap > >gv
 
 command! SynStack echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 
-" vim-clap
+" Telescope
 
-nnoremap <Leader>p :Clap files<cr>
-nnoremap <Leader>b :Clap buffers<cr>
-nnoremap <Leader>y :Clap yanks<cr>
-nnoremap <Leader>/ :Clap grep<cr>
+nnoremap <Leader>p <cmd>Telescope git_files<cr>
+nnoremap <Leader>b <cmd>Telescope buffers<cr>
+nnoremap <Leader>/ <cmd>Telescope live_grep<cr>
+
+lua require('config.telescope')
+
+" File helpers
+
 nnoremap <Leader>e :e <C-R>=fnamemodify(expand("%:p:h"), ":~:.") . "/" <CR>
 nnoremap <Leader>f :e <C-R>=fnamemodify(getcwd(), ":~:.") . "/" <CR>
 
