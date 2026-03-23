@@ -154,7 +154,7 @@ hi def link typescriptExport                    Include
 hi def link typescriptFileListMethod            NONE
 hi def link typescriptFileReaderMethod          NONE
 hi def link typescriptFileReaderProp            NONE
-hi def link typescriptFuncArg                   NONE
+hi def link typescriptFuncCallArg               NONE
 hi def link typescriptFuncType                  NONE
 hi def link typescriptFunctionMethod            NONE
 hi def link typescriptGeolocationMethod         NONE
