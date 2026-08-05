@@ -86,6 +86,8 @@ alias gp="git pull"
 alias gl="git log"
 alias gr="git rebase"
 
+PATH="$HOME/.local/bin:$PATH"
+
 if [[ -d "$GOROOT" ]]; then
     PATH="$GOROOT/bin:$PATH"
 fi
