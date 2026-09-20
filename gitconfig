@@ -1,7 +1,6 @@
 [user]
 	name = Dan Imhoff
 	email = dwieeb@gmail.com
-	signingkey = 0D251F62A9A893FE
 [github]
 	user = dwieeb
 [credential]
@@ -20,8 +19,6 @@
 	ff = only
 [init]
 	defaultBranch = main
-[commit]
-	gpgsign = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

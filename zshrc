@@ -49,15 +49,6 @@ bindkey -M viins 'jk' vi-cmd-mode
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey -M vicmd v edit-command-line
 
-if [[ -f ~/.gnupg/.gpg-agent-info ]] && [[ -n "$(pgrep gpg-agent)" ]]; then
-    source ~/.gnupg/.gpg-agent-info
-    export GPG_AGENT_INFO
-else
-    INFO=$(gpg-agent --daemon 2> /dev/null)
-    eval $INFO
-    echo $INFO > ~/.gnupg/.gpg-agent-info
-fi
-
 if [[ -d "$HOME/.nvm" ]]; then
     # https://github.com/creationix/nvm/issues/1277#issuecomment-345878237
     alias nvm='unalias nvm && source "$HOME"/.nvm/nvm.sh && nvm'
