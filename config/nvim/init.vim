@@ -237,6 +237,11 @@ nnoremap <Leader>f :e <C-R>=fnamemodify(getcwd(), ":~:.") . "/" <CR>
 
 " coc.nvim
 
+let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-oxc', 'coc-json']
+
+" coc-oxc only activates in projects with a local oxfmt, so prettier still formats elsewhere
+let g:coc_user_config = { 'oxc.oxfmt.formatterPriority': 2 }
+
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1):
       \ CheckBackspace() ? "\<Tab>" :
@@ -262,7 +267,7 @@ function! ShowDocumentation()
 endfunction
 
 command! -bar -nargs=0 ESLint :CocCommand eslint.executeAutofix
-command! -bar -nargs=0 Prettier :CocCommand prettier.formatFile
+command! -bar -nargs=0 Format :call CocAction('format')
 
 nnoremap <silent> K :call ShowDocumentation()<CR>
 nmap <silent> gd <Plug>(coc-definition)
@@ -271,7 +276,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 
-nmap <leader>t :Prettier <bar> :ESLint<cr>
+nmap <leader>t :Format <bar> :ESLint<cr>
 
 " copilot.vim
 
