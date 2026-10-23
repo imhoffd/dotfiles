@@ -77,6 +77,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 set updatetime=300
 
 autocmd BufNewFile,BufRead *.mdx set filetype=markdown
+autocmd FileType markdown,text,mail setlocal wrap
 
 " PLUGIN SETTINGS
 
