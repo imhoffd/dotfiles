@@ -60,6 +60,45 @@ command! Q q
 
 " APPEARANCE
 
+" Soften the color scheme's diff colors: blend each toward the Normal background
+" and drop the text color, so syntax colors show through in diffs.
+
+" Mix two 0xRRGGBB colors; amount 0.0 gives base, 1.0 gives color
+function! s:Blend(color, base, amount) abort
+  let channels = map([0x10000, 0x100, 0x1], {_, unit ->
+        \ float2nr(round((a:base / unit % 0x100) + ((a:color / unit % 0x100) - (a:base / unit % 0x100)) * a:amount))})
+  return call('printf', ['#%02x%02x%02x'] + channels)
+endfunction
+
+" The color a group actually paints behind text (its fg when reversed), or -1
+function! s:BackgroundOf(group) abort
+  let hl = nvim_get_hl(0, {'name': a:group, 'link': v:false})
+  return get(hl, get(hl, 'reverse', v:false) ? 'fg' : 'bg', -1)
+endfunction
+
+function! s:SoftenDiffColors() abort
+  let base = s:BackgroundOf('Normal')
+  if base < 0
+    return
+  endif
+  let delete = s:BackgroundOf('DiffDelete')
+  for [group, amount] in [['DiffAdd', 0.45], ['DiffChange', 0.45], ['DiffText', 0.30], ['DiffDelete', 0.35]]
+    let color = s:BackgroundOf(group)
+    if color >= 0
+      exe 'hi' group 'guifg=NONE gui=NONE guibg=' . s:Blend(color, base, amount)
+    endif
+  endfor
+  " Filler lines in the other pane are drawn with DiffDelete's fg
+  if delete >= 0
+    exe 'hi DiffDelete guifg=' . s:Blend(delete, base, 0.60)
+  endif
+endfunction
+
+augroup soften_diff_colors
+  autocmd!
+  autocmd ColorScheme * call s:SoftenDiffColors()
+augroup END
+
 colorscheme jellybeans
 
 set cmdheight=2
@@ -235,6 +274,45 @@ lua require('config.telescope')
 
 nnoremap <Leader>e :e <C-R>=fnamemodify(expand("%:p:h"), ":~:.") . "/" <CR>
 nnoremap <Leader>f :e <C-R>=fnamemodify(getcwd(), ":~:.") . "/" <CR>
+
+" Fugitive
+
+" :Gshow [rev] - open a commit in difftool (one tab per file, parent vs commit)
+function! s:GitShowDiff(rev) abort
+  let rev = empty(a:rev) ? 'HEAD' : a:rev
+  let sha = trim(FugitiveExecute(['rev-parse', '--verify', '--quiet', rev . '^{commit}']).stdout[0])
+  if empty(sha)
+    echohl ErrorMsg | echo 'Gshow: not a commit: ' . rev | echohl None
+    return
+  endif
+  if empty(trim(FugitiveExecute(['rev-parse', '--verify', '--quiet', sha . '~']).stdout[0]))
+    echohl ErrorMsg | echo 'Gshow: ' . sha[0:9] . ' is a root commit' | echohl None
+    return
+  endif
+  " silent hides git's "fatal: path ... not in <parent>" noise for files the commit added
+  exe 'silent Git difftool -y ' . sha . '~ ' . sha
+endfunction
+
+" First commit hash on the cursor line, falling back to the word under the cursor
+function! s:CommitOnLine() abort
+  let hash = matchstr(getline('.'), '\<\x\{7,40}\>')
+  return empty(hash) ? expand('<cword>') : hash
+endfunction
+
+command! -nargs=? -complete=customlist,fugitive#EditComplete Gshow call s:GitShowDiff(<q-args>)
+
+" :Gd [args] - unstaged changes in difftool, like `git diff`
+command! -nargs=* -complete=customlist,fugitive#EditComplete Gd exe 'silent Git difftool -y ' . <q-args>
+
+" :Gdc [args] - staged changes in difftool, like `git diff --cached`
+" (Fugitive only recognizes --cached here; --staged silently diffs index vs work tree)
+command! -nargs=* -complete=customlist,fugitive#EditComplete Gdc exe 'silent Git difftool -y --cached ' . <q-args>
+
+augroup gshow
+  autocmd!
+  " In :Git log and :Git blame buffers, <Leader>d opens the commit on the cursor line
+  autocmd FileType git,fugitiveblame nnoremap <buffer> <silent> <Leader>d :call <SID>GitShowDiff(<SID>CommitOnLine())<CR>
+augroup END
 
 " coc.nvim
 
